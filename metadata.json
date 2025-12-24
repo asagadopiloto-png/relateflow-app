@@ -1,0 +1,7 @@
+{
+  "name": "Copy of RelateFlow - Descubra Seu Estilo",
+  "description": "Uma jornada de autoconhecimento através da Psicanálise e PNL para identificar como você se comunica e se relaciona com o mundo.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
