@@ -8,8 +8,9 @@ export const getRelationalAnalysis = async (
   userContext: string
 ) => {
 const ai = new GoogleGenAI({
-  apiKey: import.meta.env.VITE_GEMINI_API_KEY || ''
+  apiKey: process.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY || ''
 });
+
   
   
   const systemInstruction = `
