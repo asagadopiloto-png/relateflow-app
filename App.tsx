@@ -1,3 +1,23 @@
+function falarTexto(texto: string) {
+  if (!("speechSynthesis" in window)) {
+    alert("Seu navegador não suporta leitura por voz");
+    return;
+  }
+
+  const fala = new SpeechSynthesisUtterance(texto);
+  fala.lang = "pt-BR";
+  fala.rate = 1;
+  fala.pitch = 1;
+  fala.volume = 1;
+
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(fala);
+}
+
+import React, { useState } from 'react';
+import { RelationalStyle, QuizResult } from './types';
+import { QUIZ_QUESTIONS, STYLE_DETAILS } from './constants';
+import { getRelationalAnalysis } from './services/geminiService';
 
 import React, { useState } from 'react';
 import { RelationalStyle, QuizResult } from './types';
@@ -88,13 +108,24 @@ const App: React.FC = () => {
   };
 
   const handleConsultAI = async () => {
-    if (!result || isAnalyzing) return;
-    setIsAnalyzing(true);
-    const context = chatInput || "Fale mais sobre o meu perfil combinado e como isso afeta minhas relações digitais.";
-    const response = await getRelationalAnalysis(result.primary, result.secondary, context);
-    setAnalysis(response);
-    setIsAnalyzing(false);
-  };
+  if (!result || isAnalyzing) return;
+
+  setIsAnalyzing(true);
+
+  const context =
+    chatInput ||
+    "Fale mais sobre o meu perfil combinado e como isso afeta minhas relações digitais.";
+
+  const response = await getRelationalAnalysis(
+  result.primary,
+  result.secondary,
+  context
+);
+
+setAnalysis(response);
+setIsAnalyzing(false);
+};
+
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -293,14 +324,26 @@ const App: React.FC = () => {
                 </div>
 
                 {analysis && (
-                  <div className="mt-8 p-6 bg-rose-50 border border-rose-100 rounded-2xl text-slate-800 leading-relaxed animate-in fade-in slide-in-from-top-2">
-                    <div className="flex items-center gap-2 mb-3 text-rose-600 font-bold text-xs uppercase tracking-widest">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20"/><path d="m17 17-5 5-5-5"/><path d="m17 7-5-5-5 5"/></svg>
-                      Análise Sistêmica
-                    </div>
-                    <p className="whitespace-pre-wrap">{analysis}</p>
-                  </div>
-                )}
+  <div className="mt-8 p-6 bg-rose-50 border border-rose-100 rounded-2xl text-slate-800 leading-relaxed animate-in fade-in slide-in-from-top-2">
+    
+    <div className="flex items-center gap-2 mb-3 text-rose-600 font-bold text-xs uppercase tracking-widest">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2v20"/></svg>
+      Análise Sistêmica
+    </div>
+
+    <p className="whitespace-pre-wrap mb-4">{analysis}</p>
+
+    <button
+  onClick={() => falarTexto(analysis)}
+  className="mt-4 bg-indigo-600 text-white px-4 py-2 rounded-xl"
+>
+  🔊 Ouvir análise
+</button>
+
+
+  </div>
+)}
+
               </div>
 
               <div className="text-center">
