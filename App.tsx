@@ -322,27 +322,41 @@ setIsAnalyzing(false);
                     {!isAnalyzing && <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>}
                   </button>
                 </div>
-
-                {analysis && (
+{analysis && (
   <div className="mt-8 p-6 bg-rose-50 border border-rose-100 rounded-2xl text-slate-800 leading-relaxed animate-in fade-in slide-in-from-top-2">
-    
+
     <div className="flex items-center gap-2 mb-3 text-rose-600 font-bold text-xs uppercase tracking-widest">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2v20"/></svg>
-      Análise Sistêmica
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      >
+        <path d="M12 2v20" />
+      </svg>
+      <span>Análise Sistêmica</span>
     </div>
 
     <p className="whitespace-pre-wrap mb-4">{analysis}</p>
 
-    <button
-  onClick={() => falarTexto(analysis)}
-  className="mt-4 bg-indigo-600 text-white px-4 py-2 rounded-xl"
->
-  🔊 Ouvir análise
-</button>
-
+    <div className="flex justify-center mt-6">
+      <button
+        onClick={() => falarTexto(analysis)}
+        className="bg-indigo-600 text-white px-6 py-3 rounded-xl text-lg shadow-lg active:scale-95"
+      >
+        🔊 Ouvir análise
+      </button>
+    </div>
 
   </div>
 )}
+
+
+
+
 
               </div>
 
