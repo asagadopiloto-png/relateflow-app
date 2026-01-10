@@ -10,10 +10,6 @@ function falarTexto(texto: string) {
   synth.cancel();
 
   // ativa engine com utterance vazia
-  const unlock = new SpeechSynthesisUtterance(" ");
-  unlock.volume = 0;
-  synth.speak(unlock);
-
   const falar = () => {
     const utterance = new SpeechSynthesisUtterance(texto);
     utterance.lang = "pt-BR";
@@ -27,7 +23,6 @@ function falarTexto(texto: string) {
         vozes.find(v => v.lang === "pt-BR") || vozes[0];
     }
 
-    synth.cancel();
     synth.speak(utterance);
   };
 
@@ -38,11 +33,6 @@ function falarTexto(texto: string) {
   }
 }
 
-
-import React, { useState } from 'react';
-import { RelationalStyle, QuizResult } from './types';
-import { QUIZ_QUESTIONS, STYLE_DETAILS } from './constants';
-import { getRelationalAnalysis } from './services/geminiService';
 
 import React, { useState } from 'react';
 import { RelationalStyle, QuizResult } from './types';
@@ -99,6 +89,11 @@ const App: React.FC = () => {
   const [chatInput, setChatInput] = useState('');
   const [analysis, setAnalysis] = useState<string>('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+const [audioUnlocked, setAudioUnlocked] = useState(false);
+const desbloquearAudio = () => {
+  window.speechSynthesis.cancel();
+  setAudioUnlocked(true);
+};
 
   const startQuiz = () => {
     setView('quiz');
@@ -149,6 +144,10 @@ const App: React.FC = () => {
 
 setAnalysis(response);
 setIsAnalyzing(false);
+};
+const desbloquearAudio = () => {
+  window.speechSynthesis.cancel();
+  setAudioUnlocked(true);
 };
 
 
@@ -367,14 +366,31 @@ setIsAnalyzing(false);
 
     <p className="whitespace-pre-wrap mb-4">{analysis}</p>
 
-    <div className="flex justify-center mt-6">
-      <button
-        onClick={() => falarTexto(analysis)}
-        className="bg-indigo-600 text-white px-6 py-3 rounded-xl text-lg shadow-lg active:scale-95"
-      >
-        🔊 Ouvir análise
-      </button>
     </div>
+)}
+{analysis && (
+  <div className="flex flex-col items-center mt-6 gap-4">
+
+    {!audioUnlocked && (
+      <button
+        onClick={desbloquearAudio}
+        className="bg-green-600 text-white px-6 py-3 rounded-xl text-lg shadow-lg"
+      >
+        🔓 Ativar áudio
+      </button>
+    )}
+
+    <button
+      onClick={() => audioUnlocked && falarTexto(analysis)}
+      disabled={!audioUnlocked}
+      className={`px-6 py-3 rounded-xl text-lg shadow-lg ${
+        audioUnlocked
+          ? "bg-indigo-600 text-white"
+          : "bg-gray-400 text-gray-200"
+      }`}
+    >
+      🔊 Ouvir análise
+    </button>
 
   </div>
 )}
