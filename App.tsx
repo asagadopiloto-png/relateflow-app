@@ -4,15 +4,40 @@ function falarTexto(texto: string) {
     return;
   }
 
-  const fala = new SpeechSynthesisUtterance(texto);
-  fala.lang = "pt-BR";
-  fala.rate = 1;
-  fala.pitch = 1;
-  fala.volume = 1;
+  const synth = window.speechSynthesis;
 
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(fala);
+  // 🔓 desbloqueia o motor de áudio no mobile
+  synth.cancel();
+
+  // ativa engine com utterance vazia
+  const unlock = new SpeechSynthesisUtterance(" ");
+  unlock.volume = 0;
+  synth.speak(unlock);
+
+  const falar = () => {
+    const utterance = new SpeechSynthesisUtterance(texto);
+    utterance.lang = "pt-BR";
+    utterance.rate = 1;
+    utterance.pitch = 1;
+    utterance.volume = 1;
+
+    const vozes = synth.getVoices();
+    if (vozes.length > 0) {
+      utterance.voice =
+        vozes.find(v => v.lang === "pt-BR") || vozes[0];
+    }
+
+    synth.cancel();
+    synth.speak(utterance);
+  };
+
+  if (synth.getVoices().length === 0) {
+    synth.onvoiceschanged = () => falar();
+  } else {
+    falar();
+  }
 }
+
 
 import React, { useState } from 'react';
 import { RelationalStyle, QuizResult } from './types';
