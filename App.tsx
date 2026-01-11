@@ -123,17 +123,23 @@ setAnalysis(response);
 setIsAnalyzing(false);
 };
 // --- Perfil terapêutico (Método Descobri Que Forma Me Relaciono) ---
+type ProfileKey = RelationalStyle | "MISTO";
 
 const isMixed =
-  result &&
+  result !== null &&
   result.primary !== result.secondary &&
   Math.abs(
     result.scores[result.primary] -
     result.scores[result.secondary]
   ) <= 1;
 
-const profileKey = isMixed ? "MISTO" : result?.primary;
-const profile = profileKey ? PROFILE_TEXTS[profileKey] : null;
+const profileKey: ProfileKey = isMixed
+  ? "MISTO"
+  : result.primary;
+
+const profile = PROFILE_TEXTS[profileKey];
+
+
  
 return (
     <div className="min-h-screen flex flex-col">
