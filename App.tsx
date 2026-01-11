@@ -73,6 +73,18 @@ const desbloquearAudio = () => {
   window.speechSynthesis.cancel();
   setAudioUnlocked(true);
 };
+const resetApp = () => {
+  window.speechSynthesis.cancel(); // para qualquer áudio em execução
+
+  setView('home');
+  setCurrentQuestion(0);
+  setAnswers([]);
+  setResult(null);
+  setChatInput('');
+  setAnalysis('');
+  setIsAnalyzing(false);
+  setAudioUnlocked(false); // 🔴 ESSENCIAL
+};
 
   const startQuiz = () => {
     setView('quiz');
@@ -377,7 +389,7 @@ return (
 
               <div className="text-center">
                 <button 
-                  onClick={() => setView('home')}
+                  onClick={resetApp}
                   className="text-slate-400 hover:text-indigo-600 font-medium transition-colors"
                 >
                   Voltar ao Início
