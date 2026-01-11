@@ -1,17 +1,6 @@
-function falarTexto(texto: string) {
-  if (!("speechSynthesis" in window)) {
-    alert("Seu navegador não suporta leitura por voz");
-    return;
-  }
 
-  const utterance = new SpeechSynthesisUtterance(texto);
-  utterance.lang = "pt-BR";
-  utterance.rate = 1;
-  utterance.pitch = 1;
-  utterance.volume = 1;
 
-  window.speechSynthesis.speak(utterance);
-}
+ 
     
 import React, { useState } from 'react';
 import { RelationalStyle, QuizResult } from './types';
@@ -68,14 +57,10 @@ const App: React.FC = () => {
   const [chatInput, setChatInput] = useState('');
   const [analysis, setAnalysis] = useState<string>('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
-const [audioUnlocked, setAudioUnlocked] = useState(false);
-const desbloquearAudio = () => {
-  window.speechSynthesis.cancel();
-  setAudioUnlocked(true);
-};
-const resetApp = () => {
-  window.speechSynthesis.cancel(); // para qualquer áudio em execução
 
+
+const resetApp = () => {
+  
   setView('home');
   setCurrentQuestion(0);
   setAnswers([]);
@@ -83,7 +68,7 @@ const resetApp = () => {
   setChatInput('');
   setAnalysis('');
   setIsAnalyzing(false);
-  setAudioUnlocked(false); // 🔴 ESSENCIAL
+ // 🔴 ESSENCIAL
 };
 
   const startQuiz = () => {
@@ -353,32 +338,7 @@ return (
 
     </div>
 )}
-{analysis && (
-  <div className="flex flex-col items-center mt-6 gap-4">
 
-    {!audioUnlocked && (
-      <button
-        onClick={desbloquearAudio}
-        className="bg-green-600 text-white px-6 py-3 rounded-xl text-lg shadow-lg"
-      >
-        🔓 Ativar áudio
-      </button>
-    )}
-
-    <button
-      onClick={() => audioUnlocked && analysis && falarTexto(analysis)}
-      disabled={!audioUnlocked}
-      className={`px-6 py-3 rounded-xl text-lg shadow-lg ${
-        audioUnlocked
-          ? "bg-indigo-600 text-white"
-          : "bg-gray-400 text-gray-200"
-      }`}
-    >
-      🔊 Ouvir análise
-    </button>
-
-  </div>
-)}
 
 
 
