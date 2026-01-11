@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import { RelationalStyle, QuizResult } from './types';
 import { QUIZ_QUESTIONS, STYLE_DETAILS } from './constants';
 import { getRelationalAnalysis } from './services/geminiService';
+import { PROFILE_TEXTS } from "./profileTexts";
 
 // --- Sub-components ---
 
@@ -121,6 +122,19 @@ const resetApp = () => {
 setAnalysis(response);
 setIsAnalyzing(false);
 };
+// --- Perfil terapêutico (Método Descobri Que Forma Me Relaciono) ---
+
+const isMixed =
+  result &&
+  result.primary !== result.secondary &&
+  Math.abs(
+    result.scores[result.primary] -
+    result.scores[result.secondary]
+  ) <= 1;
+
+const profileKey = isMixed ? "MISTO" : result?.primary;
+const profile = profileKey ? PROFILE_TEXTS[profileKey] : null;
+ 
 return (
     <div className="min-h-screen flex flex-col">
       <Header />
