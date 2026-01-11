@@ -84,7 +84,7 @@ const resetApp = () => {
       setAnswers(newAnswers);
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      calculateResult(newAnswers);
+     calculateResult(newAnswers);
     }
   };
 
