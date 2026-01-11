@@ -4,36 +4,15 @@ function falarTexto(texto: string) {
     return;
   }
 
-  const synth = window.speechSynthesis;
+  const utterance = new SpeechSynthesisUtterance(texto);
+  utterance.lang = "pt-BR";
+  utterance.rate = 1;
+  utterance.pitch = 1;
+  utterance.volume = 1;
 
-  // 🔓 desbloqueia o motor de áudio no mobile
-  synth.cancel();
-
-  // ativa engine com utterance vazia
-  const falar = () => {
-    const utterance = new SpeechSynthesisUtterance(texto);
-    utterance.lang = "pt-BR";
-    utterance.rate = 1;
-    utterance.pitch = 1;
-    utterance.volume = 1;
-
-    const vozes = synth.getVoices();
-    if (vozes.length > 0) {
-      utterance.voice =
-        vozes.find(v => v.lang === "pt-BR") || vozes[0];
-    }
-
-    synth.speak(utterance);
-  };
-
-  if (synth.getVoices().length === 0) {
-    synth.onvoiceschanged = () => falar();
-  } else {
-    falar();
-  }
+  window.speechSynthesis.speak(utterance);
 }
-
-
+    
 import React, { useState } from 'react';
 import { RelationalStyle, QuizResult } from './types';
 import { QUIZ_QUESTIONS, STYLE_DETAILS } from './constants';
@@ -145,13 +124,7 @@ const desbloquearAudio = () => {
 setAnalysis(response);
 setIsAnalyzing(false);
 };
-const desbloquearAudio = () => {
-  window.speechSynthesis.cancel();
-  setAudioUnlocked(true);
-};
-
-
-  return (
+return (
     <div className="min-h-screen flex flex-col">
       <Header />
 
@@ -381,7 +354,7 @@ const desbloquearAudio = () => {
     )}
 
     <button
-      onClick={() => audioUnlocked && falarTexto(analysis)}
+      onClick={() => audioUnlocked && analysis && falarTexto(analysis)}
       disabled={!audioUnlocked}
       className={`px-6 py-3 rounded-xl text-lg shadow-lg ${
         audioUnlocked
@@ -394,6 +367,7 @@ const desbloquearAudio = () => {
 
   </div>
 )}
+
 
 
 
