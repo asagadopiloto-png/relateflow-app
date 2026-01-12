@@ -87,8 +87,7 @@ const resetApp = () => {
      calculateResult(newAnswers);
     }
   };
-
-  const calculateResult = (finalAnswers: RelationalStyle[]) => {
+const calculateResult = (finalAnswers: RelationalStyle[]) => {
     const scores = finalAnswers.reduce((acc, style) => {
       acc[style] = (acc[style] || 0) + 1;
       return acc;
@@ -123,17 +122,20 @@ setAnalysis(response);
 setIsAnalyzing(false);
 };
 // --- Perfil terapêutico (Método Descobri Que Forma Me Relaciono) ---
-const profile =
-  result &&
-  PROFILE_TEXTS[
-    result.primary !== result.secondary &&
-    Math.abs(
-      result.scores[result.primary] -
-        result.scores[result.secondary]
-    ) <= 1
-      ? "MISTO"
-      : result.primary
-  ];
+const profile = result
+  ? PROFILE_TEXTS[
+      (
+        result.primary !== result.secondary &&
+        Math.abs(
+          result.scores[result.primary] -
+            result.scores[result.secondary]
+        ) <= 1
+          ? "MISTO"
+          : result.primary
+      ) as keyof typeof PROFILE_TEXTS
+    ]
+  : null;
+
 
 
 
