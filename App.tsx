@@ -6,7 +6,6 @@ import React, { useState } from 'react';
 import { RelationalStyle, QuizResult } from './types';
 import { QUIZ_QUESTIONS, STYLE_DETAILS } from './constants';
 import { getRelationalAnalysis } from './services/geminiService';
-import { PROFILE_TEXTS } from "./profileTexts";
 
 // --- Sub-components ---
 
@@ -121,8 +120,7 @@ const calculateResult = (finalAnswers: RelationalStyle[]) => {
 setAnalysis(response);
 setIsAnalyzing(false);
 };
-// --- Perfil terapêutico (Método Descobri Que Forma Me Relaciono) ---
-const profile = result
+
   ? PROFILE_TEXTS[
       (
         result.primary !== result.secondary &&
