@@ -57,6 +57,19 @@ const App: React.FC = () => {
   const [chatInput, setChatInput] = useState('');
   const [analysis, setAnalysis] = useState<string>('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+const getGreeting = (name?: string) => {
+  const hour = new Date().getHours();
+
+  let greeting = "Olá";
+
+  if (hour >= 0 && hour <= 11) greeting = "Bom dia";
+  else if (hour >= 12 && hour <= 17) greeting = "Boa tarde";
+  else greeting = "Boa noite";
+
+  return name && name.trim()
+    ? `${greeting}, ${name}`
+    : greeting;
+};
 
 
 const resetApp = () => {
@@ -369,7 +382,8 @@ return (
       >
         <path d="M12 2v20" />
       </svg>
-      <span>Análise Sistêmica</span>
+     <span>{getGreeting()}</span>
+ 
     </div>
 
     <p className="whitespace-pre-wrap mb-4">{analysis}</p>
