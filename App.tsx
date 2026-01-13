@@ -376,7 +376,6 @@ return (
           </section>
         )}
       </main>
-
       <Footer />
     </div>
   );
