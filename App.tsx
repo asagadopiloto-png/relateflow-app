@@ -371,18 +371,20 @@ return (
   <div className="mt-8 p-6 bg-rose-50 border border-rose-100 rounded-2xl text-slate-800 leading-relaxed animate-in fade-in slide-in-from-top-2">
 
     <div className="flex items-center gap-2 mb-3 text-rose-600 font-bold text-xs uppercase tracking-widest">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path d="M12 2v20" />
-      </svg>
-     <span>{getGreeting()}</span>
+   <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="2"
+>
+  <path d="M12 2v20" />
+</svg>
+
+<span>{getGreeting()} • Análise Sistêmica</span>
+  
  
     </div>
 
