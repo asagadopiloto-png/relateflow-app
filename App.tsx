@@ -101,25 +101,46 @@ const calculateResult = (finalAnswers: RelationalStyle[]) => {
     });
     setView('result');
   };
-
-  const handleConsultAI = async () => {
+const handleConsultAI = async () => {
   if (!result || isAnalyzing) return;
 
   setIsAnalyzing(true);
 
-  const context =
-    chatInput ||
-    "Fale mais sobre o meu perfil combinado e como isso afeta minhas relações digitais.";
+  const hour = new Date().getHours();
+
+  let greeting = "Olá";
+
+  if (hour < 12) {
+    greeting = "Bom dia";
+  } else if (hour < 18) {
+    greeting = "Boa tarde";
+  } else {
+    greeting = "Boa noite";
+  }
+
+  const name = chatInput.trim();
+  const greetingText = name
+    ? `${greeting}, ${name}.`
+    : `${greeting}.`;
+
+  const context = `
+${greetingText}
+
+Com base no meu perfil relacional, gostaria de uma análise terapêutica
+sobre como isso impacta minhas relações no ambiente digital.
+`;
 
   const response = await getRelationalAnalysis(
-  result.primary,
-  result.secondary,
-  context
-);
+    result.primary,
+    result.secondary,
+    context
+  );
 
-setAnalysis(response);
-setIsAnalyzing(false);
+  setAnalysis(response);
+  setIsAnalyzing(false);
 };
+
+  
 
   ? PROFILE_TEXTS[
       (
