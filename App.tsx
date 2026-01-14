@@ -152,25 +152,6 @@ sobre como isso impacta minhas relações no ambiente digital.
   setAnalysis(response);
   setIsAnalyzing(false);
 };
-
-  
-
-  ? PROFILE_TEXTS[
-      (
-        result.primary !== result.secondary &&
-        Math.abs(
-          result.scores[result.primary] -
-            result.scores[result.secondary]
-        ) <= 1
-          ? "MISTO"
-          : result.primary
-      ) as keyof typeof PROFILE_TEXTS
-    ]
-  : null;
-
-
-
-
  
 return (
     <div className="min-h-screen flex flex-col">
