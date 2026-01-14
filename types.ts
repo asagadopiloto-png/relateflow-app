@@ -4,6 +4,14 @@ export enum RelationalStyle {
   AUDITORY = 'AUDITORY',
   KINESTHETIC = 'KINESTHETIC'
 }
+// Eixos Sensoriais Ampliados (Método RelateFlow)
+export enum SensoryAxis {
+  VISION = 'vision',      // visão, imagens, leitura visual
+  HEARING = 'hearing',    // audição interna, tom, palavras
+  TOUCH = 'touch',        // corpo, impulsividade, tempo de resposta
+  MEMORY = 'memory',      // memória emocional, gatilhos inconscientes
+  EXPRESSION = 'expression', // fala, engolir ou expor emoções
+}
 
 export interface QuizQuestion {
   id: number;
