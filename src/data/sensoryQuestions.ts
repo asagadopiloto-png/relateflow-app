@@ -14,3 +14,4 @@ export interface SensoryQuestion {
     axis: SensoryAxis;
   }[];
 }
+export const sensoryQuestions: SensoryQuestion[] = [];
