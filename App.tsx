@@ -72,6 +72,15 @@ const App: React.FC = () => {
 
   const [passwordInput, setPasswordInput] = useState("");
   const [accessError, setAccessError] = useState("");
+  const handleAccessSubmit = () => {
+    if (passwordInput === ACCESS_PASSWORD) {
+      localStorage.setItem("accessGrantedAt", Date.now().toString());
+      setIsAuthorized(true);
+      setAccessError("");
+    } else {
+      setAccessError("Código inválido. Verifique e tente novamente.");
+    }
+  };
 
  
 const getGreeting = (name?: string) => {
