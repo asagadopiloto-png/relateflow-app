@@ -57,6 +57,23 @@ const App: React.FC = () => {
   const [chatInput, setChatInput] = useState('');
   const [analysis, setAnalysis] = useState<string>('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+ 
+  // 🔐 CONTROLE DE ACESSO TEMPORÁRIO (24H)
+  const ACCESS_PASSWORD = "TESTE24H";
+  const ACCESS_DURATION = 24 * 60 * 60 * 1000; // 24 horas
+
+  const [isAuthorized, setIsAuthorized] = useState<boolean>(() => {
+    const storedAccess = localStorage.getItem("accessGrantedAt");
+    if (!storedAccess) return false;
+
+    const grantedAt = Number(storedAccess);
+    return Date.now() - grantedAt < ACCESS_DURATION;
+  });
+
+  const [passwordInput, setPasswordInput] = useState("");
+  const [accessError, setAccessError] = useState("");
+
+ 
 const getGreeting = (name?: string) => {
   const hour = new Date().getHours();
 
