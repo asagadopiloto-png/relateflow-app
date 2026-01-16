@@ -178,11 +178,51 @@ sobre como isso impacta minhas relações no ambiente digital.
   setAnalysis(response);
   setIsAnalyzing(false);
 };
+// 🔒 BLOQUEIO DE ACESSO
+if (!isAuthorized) {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
+      <div className="bg-white p-8 rounded-2xl shadow-xl border border-slate-200 max-w-md w-full">
+        <h2 className="text-2xl font-bold text-slate-800 mb-4 text-center">
+          Acesso Restrito
+        </h2>
+
+        <p className="text-sm text-slate-600 mb-6 text-center">
+          Digite a senha temporária para acessar o aplicativo.
+          <br />
+          <span className="italic">Acesso válido por 24 horas.</span>
+        </p>
+
+        <input
+          type="password"
+          value={passwordInput}
+          onChange={(e) => setPasswordInput(e.target.value)}
+          placeholder="Senha de acesso"
+          className="w-full p-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-400 outline-none mb-4"
+        />
+
+        {accessError && (
+          <p className="text-sm text-red-500 mb-4 text-center">
+            {accessError}
+          </p>
+        )}
+
+        <button
+          onClick={handleAccessSubmit}
+          className="w-full bg-indigo-600 text-white py-3 rounded-xl font-bold hover:bg-indigo-700 transition-colors"
+        >
+          Entrar
+        </button>
+      </div>
+    </div>
+  );
+}
+
  
 return (
     <div className="min-h-screen flex flex-col">
       <Header />
-
+     
       <main className="flex-grow">
         {view === 'home' && (
           <div className="animate-in fade-in duration-700">
