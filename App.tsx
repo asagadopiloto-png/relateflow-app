@@ -237,6 +237,7 @@ return (
         {view === 'home' && (
           <div className="animate-in fade-in duration-700">
             {/* Hero */}
+           
             <section className="bg-gradient-to-br from-indigo-50 via-white to-rose-50 py-20 px-4">
               <div className="max-w-4xl mx-auto text-center">
                 <h1 className="serif text-4xl md:text-6xl text-slate-900 mb-6 leading-tight">
@@ -246,6 +247,65 @@ return (
                 <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
                   Uma jornada profunda unindo a <strong>Psicanálise</strong> e a <strong>Programação Neurolinguística (PNL)</strong> para transformar seus vínculos.
                 </p>
+               
+                <section id="quiz" className="mb-10">
+  <p className="text-slate-600 max-w-xl mx-auto">
+    Responda com sinceridade. Não existem respostas certas ou erradas —
+    apenas formas diferentes de perceber e se relacionar.
+  </p>
+     
+</section>
+ 
+      </div>
+            </section>  {/* ⬅️ FECHA HERO AQUI */}
+                    
+{/* 🔹 SOBRE */}
+<section id="about" className="py-20 px-4 max-w-3xl mx-auto">
+  <h2 className="serif text-3xl text-slate-900 mb-8 border-l-4 border-indigo-600 pl-4">
+    Sobre
+  </h2>
+
+  <p className="text-slate-600 leading-relaxed">
+    Este projeto une Psicanálise e Programação Neurolinguística para ajudar
+    você a compreender seus padrões relacionais e a forma como se conecta
+    emocionalmente com as pessoas.
+  </p>
+</section>
+{/* 🔹 ESTILOS */}
+<section id="styles" className="bg-slate-50 py-16 px-4">
+  <div className="max-w-5xl mx-auto">
+    <h2 className="text-2xl font-bold text-slate-800 mb-6">
+      Estilos Relacionais
+    </h2>
+
+    <div className="grid md:grid-cols-3 gap-6">
+      <div className="bg-white p-6 rounded-xl shadow-sm">
+        <h3 className="font-bold mb-2">Visual</h3>
+        <p className="text-sm text-slate-600">
+          Percebe o mundo por imagens, cenas e detalhes.
+        </p>
+      </div>
+
+      <div className="bg-white p-6 rounded-xl shadow-sm">
+        <h3 className="font-bold mb-2">Auditivo</h3>
+        <p className="text-sm text-slate-600">
+          Processa experiências através de palavras e sons.
+        </p>
+      </div>
+
+      <div className="bg-white p-6 rounded-xl shadow-sm">
+        <h3 className="font-bold mb-2">Cinestésico</h3>
+        <p className="text-sm text-slate-600">
+          Reage a partir de sensações físicas e emoções.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+               
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                   <button 
                     onClick={startQuiz}
