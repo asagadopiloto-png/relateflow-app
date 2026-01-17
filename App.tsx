@@ -58,29 +58,39 @@ const App: React.FC = () => {
   const [analysis, setAnalysis] = useState<string>('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
  
-  // 🔐 CONTROLE DE ACESSO TEMPORÁRIO (24H)
-  const ACCESS_PASSWORD = "TESTE24H";
-  const ACCESS_DURATION = 24 * 60 * 60 * 1000; // 24 horas
+   // 🔐 SENHAS COM PRAZO VARIÁVEL
+const ACCESS_RULES: Record<string, number> = {
+  TESTE24H: 24 * 60 * 60 * 1000,           // 24 horas
+  ASSINATURA30D: 30 * 24 * 60 * 60 * 1000  // 30 dias
+};
+const [isAuthorized, setIsAuthorized] = useState<boolean>(() => {
+  const grantedAt = localStorage.getItem("accessGrantedAt");
+  const duration = localStorage.getItem("accessDuration");
 
-  const [isAuthorized, setIsAuthorized] = useState<boolean>(() => {
-    const storedAccess = localStorage.getItem("accessGrantedAt");
-    if (!storedAccess) return false;
+  if (!grantedAt || !duration) return false;
 
-    const grantedAt = Number(storedAccess);
-    return Date.now() - grantedAt < ACCESS_DURATION;
-  });
+  return Date.now() - Number(grantedAt) < Number(duration);
+});
+  
 
   const [passwordInput, setPasswordInput] = useState("");
   const [accessError, setAccessError] = useState("");
   const handleAccessSubmit = () => {
-    if (passwordInput === ACCESS_PASSWORD) {
-      localStorage.setItem("accessGrantedAt", Date.now().toString());
-      setIsAuthorized(true);
-      setAccessError("");
-    } else {
-      setAccessError("Código inválido. Verifique e tente novamente.");
-    }
-  };
+  const duration = ACCESS_RULES[passwordInput];
+
+  if (!duration) {
+    setAccessError("Senha inválida ou expirada.");
+    return;
+  }
+
+  localStorage.setItem("accessGrantedAt", Date.now().toString());
+  localStorage.setItem("accessDuration", duration.toString());
+
+  setIsAuthorized(true);
+  setAccessError("");
+  setPasswordInput("");
+};
+
 
  
 const getGreeting = (name?: string) => {
