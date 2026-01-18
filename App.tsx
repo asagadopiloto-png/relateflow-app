@@ -9,7 +9,12 @@ import { getRelationalAnalysis } from './services/geminiService';
 
 // --- Sub-components ---
 
-const Header: React.FC = () => (
+type HeaderProps = {
+  setView: React.Dispatch<React.SetStateAction<'home' | 'quiz' | 'result'>>;
+};
+
+const Header: React.FC<HeaderProps> = ({ setView }) => (
+
   <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
     <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
       <div className="flex items-center gap-2">
@@ -19,10 +24,50 @@ const Header: React.FC = () => (
         <span className="font-bold text-slate-800 text-xl tracking-tight">RelateFlow</span>
       </div>
       <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
-        <a href="#about" className="hover:text-indigo-600 transition-colors">Sobre</a>
-        <a href="#styles" className="hover:text-indigo-600 transition-colors">Estilos</a>
-        <a href="#quiz" className="hover:text-indigo-600 transition-colors">Descobrir</a>
-      </nav>
+  <button
+    onClick={() => {
+      setView('home');
+      setTimeout(() => {
+        document
+          .getElementById('about')
+          ?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }}
+    className="hover:text-indigo-600 transition-colors"
+  >
+    Sobre
+  </button>
+
+  <button
+    onClick={() => {
+      setView('home');
+      setTimeout(() => {
+        document
+          .getElementById('styles')
+          ?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }}
+    className="hover:text-indigo-600 transition-colors"
+  >
+    Estilos
+  </button>
+
+  <button
+    onClick={() => {
+      setView('home');
+      setTimeout(() => {
+        document
+          .getElementById('quiz')
+          ?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }}
+    className="hover:text-indigo-600 transition-colors"
+  >
+    Descobrir
+  </button>
+</nav>
+
+       
     </div>
   </header>
 );
