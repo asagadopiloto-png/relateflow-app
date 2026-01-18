@@ -9,64 +9,67 @@ type HeaderProps = {
 };
 
 const Header: React.FC<HeaderProps> = ({ setView }) => (
+  <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
+    {/* conteúdo */}
+  </header>
+);
 
+
+const Header: React.FC<HeaderProps> = ({ setView }) => (
   <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
     <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
       <div className="flex items-center gap-2">
         <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="M12 7v10"/><path d="M8 12h8"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/>
+            <path d="M12 7v10"/>
+            <path d="M8 12h8"/>
+          </svg>
         </div>
         <span className="font-bold text-slate-800 text-xl tracking-tight">RelateFlow</span>
       </div>
+
       <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
-  <button
-    onClick={() => {
-      setView('home');
-      setTimeout(() => {
-        document
-          .getElementById('about')
-          ?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    }}
-    className="hover:text-indigo-600 transition-colors"
-  >
-    Sobre
-  </button>
+        <button
+          onClick={() => {
+            setView('home');
+            setTimeout(() => {
+              document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+          }}
+          className="hover:text-indigo-600 transition-colors"
+        >
+          Sobre
+        </button>
 
-  <button
-    onClick={() => {
-      setView('home');
-      setTimeout(() => {
-        document
-          .getElementById('styles')
-          ?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    }}
-    className="hover:text-indigo-600 transition-colors"
-  >
-    Estilos
-  </button>
+        <button
+          onClick={() => {
+            setView('home');
+            setTimeout(() => {
+              document.getElementById('styles')?.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+          }}
+          className="hover:text-indigo-600 transition-colors"
+        >
+          Estilos
+        </button>
 
-  <button
-    onClick={() => {
-      setView('home');
-      setTimeout(() => {
-        document
-          .getElementById('quiz')
-          ?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    }}
-    className="hover:text-indigo-600 transition-colors"
-  >
-    Descobrir
-  </button>
-</nav>
-
-       
+        <button
+          onClick={() => {
+            setView('home');
+            setTimeout(() => {
+              document.getElementById('quiz')?.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+          }}
+          className="hover:text-indigo-600 transition-colors"
+        >
+          Descobrir
+        </button>
+      </nav>
     </div>
-  <Header setView={setView} />
-
+  </header>
 );
+
 
 const Footer: React.FC = () => (
   <footer className="bg-slate-900 text-slate-400 py-12 px-4">
