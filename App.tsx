@@ -64,7 +64,8 @@ const Header: React.FC<HeaderProps> = ({ setView }) => (
 
        
     </div>
-  </header>
+  <Header setView={setView} />
+
 );
 
 const Footer: React.FC = () => (
@@ -271,7 +272,8 @@ if (!isAuthorized) {
  
 return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <Header setView={setView} />
+
      
       <main className="flex-grow">
         {view === 'home' && (
