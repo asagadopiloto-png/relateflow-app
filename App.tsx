@@ -2,75 +2,26 @@ import React, { useState } from 'react';
 import { RelationalStyle, QuizResult } from './types';
 import { QUIZ_QUESTIONS, STYLE_DETAILS } from './constants';
 import { getRelationalAnalysis } from './services/geminiService';
+
 // --- Sub-components ---
 
-
-type HeaderProps = {
-  setView: React.Dispatch<React.SetStateAction<'home' | 'quiz' | 'result'>>;
-};
-
-const Header: React.FC<HeaderProps> = ({ setView }) => (
-  <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
-    {/* conteúdo */}
-  </header>
-);
-
-
-const Header: React.FC<HeaderProps> = ({ setView }) => (
+const Header: React.FC = () => (
   <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
     <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
       <div className="flex items-center gap-2">
         <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/>
-            <path d="M12 7v10"/>
-            <path d="M8 12h8"/>
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="M12 7v10"/><path d="M8 12h8"/></svg>
         </div>
         <span className="font-bold text-slate-800 text-xl tracking-tight">RelateFlow</span>
       </div>
-
       <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
-        <button
-          onClick={() => {
-            setView('home');
-            setTimeout(() => {
-              document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-          }}
-          className="hover:text-indigo-600 transition-colors"
-        >
-          Sobre
-        </button>
-
-        <button
-          onClick={() => {
-            setView('home');
-            setTimeout(() => {
-              document.getElementById('styles')?.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-          }}
-          className="hover:text-indigo-600 transition-colors"
-        >
-          Estilos
-        </button>
-
-        <button
-          onClick={() => {
-            setView('home');
-            setTimeout(() => {
-              document.getElementById('quiz')?.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-          }}
-          className="hover:text-indigo-600 transition-colors"
-        >
-          Descobrir
-        </button>
+        <a href="#about" className="hover:text-indigo-600 transition-colors">Sobre</a>
+        <a href="#styles" className="hover:text-indigo-600 transition-colors">Estilos</a>
+        <a href="#quiz" className="hover:text-indigo-600 transition-colors">Descobrir</a>
       </nav>
     </div>
   </header>
 );
-
 
 const Footer: React.FC = () => (
   <footer className="bg-slate-900 text-slate-400 py-12 px-4">
@@ -103,39 +54,29 @@ const App: React.FC = () => {
   const [analysis, setAnalysis] = useState<string>('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
  
-   // 🔐 SENHAS COM PRAZO VARIÁVEL
-const ACCESS_RULES: Record<string, number> = {
-  TESTE24H: 24 * 60 * 60 * 1000,           // 24 horas
-  ASSINATURA30D: 30 * 24 * 60 * 60 * 1000  // 30 dias
-};
-const [isAuthorized, setIsAuthorized] = useState<boolean>(() => {
-  const grantedAt = localStorage.getItem("accessGrantedAt");
-  const duration = localStorage.getItem("accessDuration");
+  // 🔐 CONTROLE DE ACESSO TEMPORÁRIO (24H)
+  const ACCESS_PASSWORD = "TESTE24H";
+  const ACCESS_DURATION = 24 * 60 * 60 * 1000; // 24 horas
 
-  if (!grantedAt || !duration) return false;
+  const [isAuthorized, setIsAuthorized] = useState<boolean>(() => {
+    const storedAccess = localStorage.getItem("accessGrantedAt");
+    if (!storedAccess) return false;
 
-  return Date.now() - Number(grantedAt) < Number(duration);
-});
-  
+    const grantedAt = Number(storedAccess);
+    return Date.now() - grantedAt < ACCESS_DURATION;
+  });
 
   const [passwordInput, setPasswordInput] = useState("");
   const [accessError, setAccessError] = useState("");
   const handleAccessSubmit = () => {
-  const duration = ACCESS_RULES[passwordInput];
-
-  if (!duration) {
-    setAccessError("Senha inválida ou expirada.");
-    return;
-  }
-
-  localStorage.setItem("accessGrantedAt", Date.now().toString());
-  localStorage.setItem("accessDuration", duration.toString());
-
-  setIsAuthorized(true);
-  setAccessError("");
-  setPasswordInput("");
-};
-
+    if (passwordInput === ACCESS_PASSWORD) {
+      localStorage.setItem("accessGrantedAt", Date.now().toString());
+      setIsAuthorized(true);
+      setAccessError("");
+    } else {
+      setAccessError("Código inválido. Verifique e tente novamente.");
+    }
+  };
 
  
 const getGreeting = (name?: string) => {
@@ -276,14 +217,12 @@ if (!isAuthorized) {
  
 return (
     <div className="min-h-screen flex flex-col">
-      <Header setView={setView} />
-
+      <Header />
      
       <main className="flex-grow">
         {view === 'home' && (
           <div className="animate-in fade-in duration-700">
             {/* Hero */}
-           
             <section className="bg-gradient-to-br from-indigo-50 via-white to-rose-50 py-20 px-4">
               <div className="max-w-4xl mx-auto text-center">
                 <h1 className="serif text-4xl md:text-6xl text-slate-900 mb-6 leading-tight">
@@ -293,65 +232,6 @@ return (
                 <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
                   Uma jornada profunda unindo a <strong>Psicanálise</strong> e a <strong>Programação Neurolinguística (PNL)</strong> para transformar seus vínculos.
                 </p>
-               
-                <section id="quiz" className="mb-10">
-  <p className="text-slate-600 max-w-xl mx-auto">
-    Responda com sinceridade. Não existem respostas certas ou erradas —
-    apenas formas diferentes de perceber e se relacionar.
-  </p>
-     
-</section>
- 
-      </div>
-            </section>  {/* ⬅️ FECHA HERO AQUI */}
-                    
-{/* 🔹 SOBRE */}
-<section id="about" className="py-20 px-4 max-w-3xl mx-auto">
-  <h2 className="serif text-3xl text-slate-900 mb-8 border-l-4 border-indigo-600 pl-4">
-    Sobre
-  </h2>
-
-  <p className="text-slate-600 leading-relaxed">
-    Este projeto une Psicanálise e Programação Neurolinguística para ajudar
-    você a compreender seus padrões relacionais e a forma como se conecta
-    emocionalmente com as pessoas.
-  </p>
-</section>
-{/* 🔹 ESTILOS */}
-<section id="styles" className="bg-slate-50 py-16 px-4">
-  <div className="max-w-5xl mx-auto">
-    <h2 className="text-2xl font-bold text-slate-800 mb-6">
-      Estilos Relacionais
-    </h2>
-
-    <div className="grid md:grid-cols-3 gap-6">
-      <div className="bg-white p-6 rounded-xl shadow-sm">
-        <h3 className="font-bold mb-2">Visual</h3>
-        <p className="text-sm text-slate-600">
-          Percebe o mundo por imagens, cenas e detalhes.
-        </p>
-      </div>
-
-      <div className="bg-white p-6 rounded-xl shadow-sm">
-        <h3 className="font-bold mb-2">Auditivo</h3>
-        <p className="text-sm text-slate-600">
-          Processa experiências através de palavras e sons.
-        </p>
-      </div>
-
-      <div className="bg-white p-6 rounded-xl shadow-sm">
-        <h3 className="font-bold mb-2">Cinestésico</h3>
-        <p className="text-sm text-slate-600">
-          Reage a partir de sensações físicas e emoções.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-               
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                   <button 
                     onClick={startQuiz}
