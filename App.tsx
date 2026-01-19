@@ -4,6 +4,7 @@ import { QUIZ_QUESTIONS, STYLE_DETAILS } from './constants';
 import { getRelationalAnalysis } from './services/geminiService';
 // --- Sub-components ---
 
+
 type HeaderProps = {
   setView: React.Dispatch<React.SetStateAction<'home' | 'quiz' | 'result'>>;
 };
