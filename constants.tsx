@@ -39,12 +39,21 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     ]
   },
   {
-    id: 5,
-    question: "No trabalho, o que te faz sentir mais reconhecido?",
-    options: [
-      { text: "Um relatório bem apresentado onde meu nome aparece com destaque.", style: RelationalStyle.VISUAL },
-      { text: "Um feedback verbal positivo em frente à equipe.", style: RelationalStyle.AUDITORY },
-      { text: "Sentir que faço parte de algo importante e o clima amistoso.", style: RelationalStyle.KINESTHETIC }
+  id: 5,
+  question: "Em atividades do dia a dia — como na escola, universidade, trabalho ou outras experiências da vida — o que mais te faz sentir reconhecido(a)?",
+  options: [
+    {
+      text: "Uma apresentação ou trabalho bem feito, onde meu nome aparece em destaque.",
+      style: RelationalStyle.VISUAL
+    },
+    {
+      text: "Um elogio ou feedback positivo do professor, chefe ou responsável, na frente de outras pessoas.",
+      style: RelationalStyle.AUDITORY
+    },
+    {
+      text: "Sentir que faço parte de algo importante e perceber um clima de união e acolhimento.",
+      style: RelationalStyle.KINESTHETIC
+     }
     ]
   }
 ];
