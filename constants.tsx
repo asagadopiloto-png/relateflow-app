@@ -1,7 +1,7 @@
 
 import { RelationalStyle, QuizQuestion } from './types';
 
-export const QUIZ_QUESTIONS: QuizQuestion[] = [
+export const QUIZ_QUESTIONS: QuizQuestion[] = [ 
   {
     id: 1,
     question: "Quando você conhece alguém novo, o que mais chama sua atenção?",
