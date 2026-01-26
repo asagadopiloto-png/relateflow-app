@@ -11,7 +11,7 @@ export const getRelationalAnalysis = async (
   
   const systemInstruction = `
     Você é um Analista Relacional especialista em Psicanálise e PNL. 
-    Seu objetivo é ajudar o usuário a entender seu perfil de relacionamento.
+  C
     O perfil do usuário é Predominante: ${primary} e Secundário: ${secondary}.
     
     Diretrizes:
@@ -34,6 +34,7 @@ export const getRelationalAnalysis = async (
     return response.text || "Desculpe, não consegui processar sua análise agora.";
   } catch (error) {
     console.error("Gemini API Error:", error);
-    return "Houve um erro ao consultar o analista. Verifique sua conexão.";
+    return "Houve um erro ao consultar o EMO VÍNCULO. Verifique sua conexão.";
+
   }
 };
