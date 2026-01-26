@@ -4,7 +4,7 @@ export enum RelationalStyle {
   AUDITORY = 'AUDITORY',
   KINESTHETIC = 'KINESTHETIC'
 }
-// Eixos Sensoriais Ampliados (Método RelateFlow)
+// Eixos Sensoriais Ampliados (Método EMO VÍNCULO)
 export enum SensoryAxis {
   VISION = 'vision',      // visão, imagens, leitura visual
   HEARING = 'hearing',    // audição interna, tom, palavras
