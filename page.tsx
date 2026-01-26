@@ -9,17 +9,17 @@ export default function PoliticaDePrivacidade() {
         lineHeight: 1.6,
       }}
     >
-      <h1>Política de Privacidade – RelateFlow</h1>
+      <h1>Política de Privacidade – EMO VÍNCULO</h1>
 
       <p>
         A sua privacidade é importante para nós. Esta Política de Privacidade
-        descreve como o aplicativo RelateFlow coleta, utiliza e protege as
+        descreve como o aplicativo EMO VÍNCULO coleta, utiliza e protege as
         informações dos usuários.
       </p>
 
       <h2>1. Finalidade do Aplicativo</h2>
       <p>
-        O RelateFlow é um aplicativo de caráter educativo e reflexivo, baseado em
+        O EMO VÍNCULO é um aplicativo de caráter educativo e reflexivo, baseado em
         conceitos da Psicanálise e da Programação Neurolinguística (PNL). Ele não
         substitui acompanhamento psicológico, psicanalítico ou terapêutico
         profissional.
@@ -27,7 +27,7 @@ export default function PoliticaDePrivacidade() {
 
       <h2>2. Coleta de Informações</h2>
       <p>
-        O RelateFlow não coleta dados pessoais sensíveis como nome, CPF, endereço,
+        O EMO VÍNCULO não coleta dados pessoais sensíveis como nome, CPF, endereço,
         dados bancários ou informações médicas.
       </p>
       <p>
@@ -49,7 +49,7 @@ export default function PoliticaDePrivacidade() {
 
       <h2>4. Compartilhamento de Dados</h2>
       <p>
-        O RelateFlow não vende, não compartilha e não comercializa informações dos
+        O EMO VÍNCULO não vende, não compartilha e não comercializa informações dos
         usuários com terceiros.
       </p>
 
@@ -91,3 +91,4 @@ export default function PoliticaDePrivacidade() {
     </main>
   );
 }
+
