@@ -8,12 +8,14 @@ import { getRelationalAnalysis } from './services/geminiService';
 const Header: React.FC = () => (
   <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
     <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-      <div className="flex items-center gap-2">
-        <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="M12 7v10"/><path d="M8 12h8"/></svg>
-        </div>
-        <span className="font-bold text-slate-800 text-xl tracking-tight">EMO VÍNCULO</span>
-      </div>
+    <div className="flex items-center gap-3">
+  <img
+    src="/logo-emo.png"
+    alt="EMO VÍNCULO"
+    className="h-10 w-auto"
+  />
+</div>
+  
       <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
         <a href="#about" className="hover:text-indigo-600 transition-colors">Sobre</a>
         <a href="#styles" className="hover:text-indigo-600 transition-colors">Estilos</a>
