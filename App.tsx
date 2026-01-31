@@ -166,8 +166,8 @@ const handleConsultAI = async () => {
   const context = `
 ${greetingText}
 
-Com base no meu perfil relacional, gostaria de uma análise terapêutica
-sobre como isso impacta minhas relações no ambiente digital.
+Com base no meu perfil relacional, gostaria de uma reflexão educativa
+sobre como diferentes estilos de comunicação impactam relações no ambiente digital.
 `;
 
   const response = await getRelationalAnalysis(
