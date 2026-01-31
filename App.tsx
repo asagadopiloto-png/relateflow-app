@@ -262,7 +262,9 @@ return (
                   Relacionar-se é uma arte complexa. Desde os primeiros anos de vida, buscamos no outro uma resposta para nossas necessidades emocionais: ser acolhido, ouvido, visto, reconhecido.
                 </p>
                 <p>
-                  A psicanálise nos ensina que repetimos padrões inconscientes. A PNL nos oferece um mapa prático através dos canais: <strong>Visual, Auditivo e Cinestésico</strong>.
+                  Estudos teóricos da Psicanálise e da Programação Neurolinguística (PNL) descrevem
+padrões de percepção e comunicação que ajudam a compreender estilos de interação
+: <strong>Visual, Auditivo e Cinestésico</strong>.
                 </p>
                 <div className="grid md:grid-cols-3 gap-6 my-12">
                   <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
