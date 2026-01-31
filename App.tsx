@@ -38,7 +38,9 @@ const Footer: React.FC = () => (
   Não coletamos dados sensíveis dos usuários. Se você estiver enfrentando dificuldades emocionais graves, procure um profissional de saúde mental.
 </p>
       </div>
-      <p className="text-sm">© 2026 EMO VÍNCULO - Abordagem Psicanálise & PNL</p>
+      <p className="text-sm">
+© 2026 EMO VÍNCULO – Base teórica em Psicanálise e Programação Neurolinguística (PNL), com finalidade educativa.
+</p>
       <div className="mt-4 flex justify-center gap-4 text-xs">
         <span>Baseado em Freud, Klein, Bandler e Grinder</span>
       </div>
