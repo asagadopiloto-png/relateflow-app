@@ -35,7 +35,7 @@ const Footer: React.FC = () => (
   Não coletamos dados sensíveis dos usuários. Se você estiver enfrentando dificuldades emocionais graves, procure um profissional de saúde mental.
 </p>
       </div>
-      <p className="text-sm">© 2024 EMO VÍNCULO - Abordagem Psicanálise & PNL</p>
+      <p className="text-sm">© 2026 EMO VÍNCULO - Abordagem Psicanálise & PNL</p>
       <div className="mt-4 flex justify-center gap-4 text-xs">
         <span>Baseado em Freud, Klein, Bandler e Grinder</span>
       </div>
