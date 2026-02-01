@@ -358,7 +358,10 @@ padrões de percepção e comunicação que ajudam a compreender estilos de inte
                   <h3 className="text-3xl font-bold mt-2 mb-4">{STYLE_DETAILS[result.primary].title}</h3>
                   <div className="space-y-4 text-indigo-50">
                     <p><strong>PNL:</strong> {STYLE_DETAILS[result.primary].pnl}</p>
-                    <p><strong>Psicanálise:</strong> {STYLE_DETAILS[result.primary].psycho}</p>
+                    <p>
+  <strong>Leitura teórica inspirada na Psicanálise:</strong>{' '}
+  {STYLE_DETAILS[result.primary].psycho}
+</p>
                   </div>
                 </div>
 
