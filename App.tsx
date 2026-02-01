@@ -39,12 +39,10 @@ const Footer: React.FC = () => (
 </p>
       </div>
       <p className="text-sm">
-<p className="text-sm">
   © 2026 EMO VÍNCULO – Base teórica em Psicanálise e Programação Neurolinguística (PNL),
   com finalidade educativa.
 </p>
 
-</p>
       <div className="mt-4 flex justify-center gap-4 text-xs">
         
       </div>
@@ -266,10 +264,11 @@ return (
                   Relacionar-se é uma arte complexa. Desde os primeiros anos de vida, buscamos no outro uma resposta para nossas necessidades emocionais: ser acolhido, ouvido, visto, reconhecido.
                 </p>
                 <p>
-                  Estudos teóricos da Psicanálise e da Programação Neurolinguística (PNL) descrevem
-padrões de percepção e comunicação que ajudam a compreender estilos de interação
-: <strong>Visual, Auditivo e Cinestésico</strong>.
-                </p>
+  Estudos teóricos da Psicanálise e da Programação Neurolinguística (PNL) descrevem
+  padrões de percepção e comunicação que ajudam a compreender estilos de interação:
+  <strong> Visual, Auditivo e Cinestésico</strong>.
+</p>
+
                 <div className="grid md:grid-cols-3 gap-6 my-12">
                   <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
                     <div className="text-indigo-600 mb-3">
