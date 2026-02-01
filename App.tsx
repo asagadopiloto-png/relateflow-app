@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { RelationalStyle, QuizResult } from './types';
 import { QUIZ_QUESTIONS, STYLE_DETAILS } from './constants';
 import { getRelationalAnalysis } from './services/geminiService';
-import logoEmo from './assets/logo-emo.png';
+
 
 // --- Sub-components ---
 
@@ -10,11 +10,10 @@ const Header: React.FC = () => (
   <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
     <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
     <div className="flex items-center gap-3">
-  <img
-    src={logoEmo}
-    alt="EMO VÍNCULO"
-    className="h-10 w-auto"
-  />
+  <h1 className="text-xl font-bold text-slate-800 tracking-wide">
+  EMO VÍNCULO
+</h1>
+
 </div>
   
       <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
