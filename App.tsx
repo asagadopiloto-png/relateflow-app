@@ -50,7 +50,7 @@ const Footer: React.FC = () => (
   </footer>
 );
 
-export default Footer;
+export default App;
 
 
 // --- Main App Component ---
