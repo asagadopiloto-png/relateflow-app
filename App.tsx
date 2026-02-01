@@ -39,10 +39,14 @@ const Footer: React.FC = () => (
 </p>
       </div>
       <p className="text-sm">
-© 2026 EMO VÍNCULO – Base teórica em Psicanálise e Programação Neurolinguística (PNL), com finalidade educativa.
+<p className="text-sm">
+  © 2026 EMO VÍNCULO – Base teórica em Psicanálise e Programação Neurolinguística (PNL),
+  com finalidade educativa.
+</p>
+
 </p>
       <div className="mt-4 flex justify-center gap-4 text-xs">
-        <span>Baseado em Freud, Klein, Bandler e Grinder</span>
+        
       </div>
     </div>
   </footer>
