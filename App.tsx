@@ -433,7 +433,7 @@ padrões de percepção e comunicação que ajudam a compreender estilos de inte
   <path d="M12 2v20" />
 </svg>
 
-<span>{getGreeting()} • Análise Sistêmica</span>
+<span>{getGreeting()} • Reflexão Educacional</span>
   
  
     </div>
