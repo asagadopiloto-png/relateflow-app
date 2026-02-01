@@ -30,25 +30,28 @@ const Footer: React.FC = () => (
   <footer className="bg-slate-900 text-slate-400 py-12 px-4">
     <div className="max-w-5xl mx-auto text-center">
       <div className="mb-6 pb-6 border-b border-slate-800">
-        <h5 className="text-slate-300 font-bold mb-2 text-xs uppercase tracking-widest">Aviso Legal</h5>
+        <h5 className="text-slate-300 font-bold mb-2 text-xs uppercase tracking-widest">
+          Aviso Legal
+        </h5>
         <p className="text-xs max-w-2xl mx-auto leading-relaxed opacity-60">
-  Este aplicativo tem caráter exclusivamente educativo e reflexivo.<br />
-  Ele não substitui terapia, psicanálise ou acompanhamento psicológico profissional.<br />
-  Os resultados não constituem diagnóstico psicológico ou clínico.<br />
-  Não coletamos dados sensíveis dos usuários. Se você estiver enfrentando dificuldades emocionais graves, procure um profissional de saúde mental.
-</p>
+          Este aplicativo tem caráter exclusivamente educativo e reflexivo.<br />
+          Ele não substitui terapia, psicanálise ou acompanhamento psicológico profissional.<br />
+          Os resultados não constituem diagnóstico psicológico ou clínico.<br />
+          Não coletamos dados sensíveis dos usuários. Se você estiver enfrentando dificuldades emocionais graves,
+          procure um profissional de saúde mental.
+        </p>
       </div>
-      <p className="text-sm">
-  © 2026 EMO VÍNCULO – Base teórica em Psicanálise e Programação Neurolinguística (PNL),
-  com finalidade educativa.
-</p>
 
-      <div className="mt-4 flex justify-center gap-4 text-xs">
-        
-      </div>
+      <p className="text-sm">
+        © 2026 EMO VÍNCULO – Base teórica em Psicanálise e
+        Programação Neurolinguística (PNL), com finalidade educativa.
+      </p>
     </div>
   </footer>
 );
+
+export default Footer;
+
 
 // --- Main App Component ---
 
