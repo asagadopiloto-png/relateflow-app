@@ -16,12 +16,7 @@ const Header: React.FC = () => (
 
 </div>
   
-      <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
-        <a href="#about" className="hover:text-indigo-600 transition-colors">Sobre</a>
-        <a href="#styles" className="hover:text-indigo-600 transition-colors">Estilos</a>
-        <a href="#quiz" className="hover:text-indigo-600 transition-colors">Descobrir</a>
-      </nav>
-    </div>
+      </div>
   </header>
 );
 
