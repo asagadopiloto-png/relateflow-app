@@ -234,7 +234,7 @@ return (
                 <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
   Um espaço estruturado de reflexão educativa para ampliar a percepção sobre vínculos e interações ao longo da vida.
 </p>
-                </p>
+                
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                   <button 
                     onClick={startQuiz}
