@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { RelationalStyle, QuizResult } from './types';
 import { QUIZ_QUESTIONS, STYLE_DETAILS } from './constants';
-
+import { getRelationalAnalysis } from './services/geminiService';
 
 
 // --- Sub-components ---
@@ -167,19 +167,11 @@ Com base no meu perfil relacional, gostaria de uma reflexão educativa
 sobre como diferentes estilos de comunicação impactam relações no ambiente digital.
 `;
 
- const response = await fetch('/api/analysis', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    primary: result.primary,
-    secondary: result.secondary,
-    context: context,
-  }),
-});
-
-const data = await response.json(); 
+  const response = await getRelationalAnalysis(
+    result.primary,
+    result.secondary,
+    context
+  );
 
   setAnalysis(response);
   setIsAnalyzing(false);
