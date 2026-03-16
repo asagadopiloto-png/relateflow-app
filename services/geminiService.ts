@@ -5,7 +5,7 @@ export const getRelationalAnalysis = async (
   secondary: RelationalStyle,
   userContext: string
 ) => {
-  console.log("🚀 Chamando API /api/analysis");
+  
   try {
     const response = await fetch("/api/analysis", {
       method: "POST",
