@@ -34,22 +34,19 @@ Diretrizes obrigatórias:
 `;
 
   try {
-    const response = await ai.models.generateContent({
-      model: "gemini-1.5-flash",
-      contents: userContext,
-      config: {
-        systemInstruction,
-        temperature: 0.7,
-      },
-    });
+  const result = await ai.models.generateContent({
+    model: "gemini-1.5-flash",
+    contents: prompt,
+  });
 
-    return res.status(200).json({
-      result: response.text,
-    });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({
-      error: "Erro ao gerar análise",
-    });
-  }
+  res.status(200).json({
+    result: result.text || "Sem resposta do modelo",
+  });
+
+} catch (error) {
+  console.error("Erro Gemini:", error);
+
+  res.status(200).json({
+    result: "⚠️ O sistema está temporariamente indisponível. Tente novamente em instantes."
+  });
 }
