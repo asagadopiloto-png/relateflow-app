@@ -6,7 +6,7 @@ export default async function handler(req: any, res: any) {
   const { primary, secondary, userContext } = req.body;
 
   const ai = new GoogleGenAI({
-    apiKey: process.env.GEMINI_API_KEY,
+    apiKey: process.env["emovinculo-api"],
   });
 
   const systemInstruction = `
