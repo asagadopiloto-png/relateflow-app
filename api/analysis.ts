@@ -32,7 +32,12 @@ Diretrizes obrigatórias:
 5. Estimule reflexão por meio de perguntas abertas e observações gerais.
 6. Responda sempre em Português do Brasil.
 `;
+const prompt = `
+${systemInstruction}
 
+Contexto do usuário:
+${userContext}
+`;
   try {
   const result = await ai.models.generateContent({
     model: "gemini-1.5-flash",
