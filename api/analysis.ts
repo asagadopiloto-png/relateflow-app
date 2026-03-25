@@ -45,7 +45,7 @@ ${userContext}
   });
 
   res.status(200).json({
-    result: result.text || "Sem resposta do modelo",
+    result: result.candidates?.[0]?.content?.parts?.[0]?.text || "Sem resposta do modelo",
   });
 
 } catch (error) {
