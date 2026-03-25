@@ -1,13 +1,14 @@
-import { GoogleGenAI } from "@google/genai";
 export default async function handler(req: any, res: any) {
+
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Método não permitido" });
   }
+
   const { primary, secondary, userContext } = req.body;
 
-  const ai = new GoogleGenAI({
-    apiKey: process.env.GEMINI_API_KEY,
-  });
+  // 👉 NÃO TEM MAIS GoogleGenAI aqui
+
+  
 
   const systemInstruction = `
 Você atua como um facilitador de reflexão educacional, com base teórica em
