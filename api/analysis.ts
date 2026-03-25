@@ -55,3 +55,4 @@ ${userContext}
     result: "⚠️ O sistema está temporariamente indisponível. Tente novamente em instantes."
   });
 }
+}
