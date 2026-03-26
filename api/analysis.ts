@@ -40,13 +40,27 @@ Contexto do usuário:
 ${userContext}
 `;
   try {
-  const result = await ai.models.generateContent({
-    model: "gemini-1.5-flash-latest",
-    contents: prompt,
-  });
+  const response = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${process.env.GEMINI_API_KEY}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        contents: [
+          {
+            parts: [{ text: prompt }],
+          },
+        ],
+      }),
+    }
+  );
+
+  const data = await response.json();
 
   res.status(200).json({
-    result: result.candidates?.[0]?.content?.parts?.[0]?.text || "Sem resposta do modelo",
+    result: data.candidates?.[0]?.content?.parts?.[0]?.text || "Sem resposta do modelo",
   });
 
 } catch (error) {
@@ -56,4 +70,5 @@ ${userContext}
     result: "⚠️ O sistema está temporariamente indisponível. Tente novamente em instantes."
   });
 }
-}
+
+ 
