@@ -56,12 +56,17 @@ ${userContext}
       }),
     }
   );
+const data = await response.json();
+   const text =
+  data?.candidates?.[0]?.content?.parts?.[0]?.text ||
+  data?.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data ||
+  "Sem resposta do modelo";
 
-  const data = await response.json();
-
-  res.status(200).json({
-    result: data.candidates?.[0]?.content?.parts?.[0]?.text || "Sem resposta do modelo",
-  });
+res.status(200).json({
+  result: text,
+}); ,
+});
+  
 
 } catch (error) {
   console.error("Erro Gemini:", error);
@@ -70,5 +75,5 @@ ${userContext}
     result: "⚠️ O sistema está temporariamente indisponível. Tente novamente em instantes."
   });
 }
-
+}
  
