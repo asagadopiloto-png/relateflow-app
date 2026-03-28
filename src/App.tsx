@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { RelationalStyle, QuizResult } from './types';
-import { QUIZ_QUESTIONS } from './data/sensoyQuestions';
+import { QUIZ_QUESTIONS } from "./dados/sensoryQuestions";
 import { STYLE_DETAILS } from './profileTexts';
 import { getRelationalAnalysis } from './services/geminiService.ts';
 
