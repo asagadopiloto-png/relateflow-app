@@ -1,22 +1,26 @@
+
 import React, { useState } from 'react';
 import { RelationalStyle, QuizResult } from './types';
 import { QUIZ_QUESTIONS, STYLE_DETAILS } from './constants';
 import { getRelationalAnalysis } from './services/geminiService';
-
 
 // --- Sub-components ---
 
 const Header: React.FC = () => (
   <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
     <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-    <div className="flex items-center gap-3">
-  <h1 className="text-xl font-bold text-slate-800 tracking-wide">
-  EMO VÍNCULO
-</h1>
-
-</div>
-  
+      <div className="flex items-center gap-2">
+        <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="M12 7v10"/><path d="M8 12h8"/></svg>
+        </div>
+        <span className="font-bold text-slate-800 text-xl tracking-tight">RelateFlow</span>
       </div>
+      <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
+        <a href="#about" className="hover:text-indigo-600 transition-colors">Sobre</a>
+        <a href="#styles" className="hover:text-indigo-600 transition-colors">Estilos</a>
+        <a href="#quiz" className="hover:text-indigo-600 transition-colors">Descobrir</a>
+      </nav>
+    </div>
   </header>
 );
 
@@ -24,26 +28,21 @@ const Footer: React.FC = () => (
   <footer className="bg-slate-900 text-slate-400 py-12 px-4">
     <div className="max-w-5xl mx-auto text-center">
       <div className="mb-6 pb-6 border-b border-slate-800">
-        <h5 className="text-slate-300 font-bold mb-2 text-xs uppercase tracking-widest">
-          Aviso Legal
-        </h5>
+        <h5 className="text-slate-300 font-bold mb-2 text-xs uppercase tracking-widest">Aviso Legal</h5>
         <p className="text-xs max-w-2xl mx-auto leading-relaxed opacity-60">
-          Este aplicativo tem caráter exclusivamente educativo e reflexivo.<br />
-          Ele não substitui terapia, psicanálise ou acompanhamento psicológico profissional.<br />
-          Os resultados não constituem diagnóstico psicológico ou clínico.<br />
-          Não coletamos dados sensíveis dos usuários. Se você estiver enfrentando dificuldades emocionais graves,
-          procure um profissional de saúde mental.
-        </p>
+  Este aplicativo tem caráter exclusivamente educativo e reflexivo.<br />
+  Ele não substitui terapia, psicanálise ou acompanhamento psicológico profissional.<br />
+  Os resultados não constituem diagnóstico psicológico ou clínico.<br />
+  Não coletamos dados sensíveis dos usuários. Se você estiver enfrentando dificuldades emocionais graves, procure um profissional de saúde mental.
+</p>
       </div>
-
-      <p className="text-sm">
-        © 2026 EMO VÍNCULO – Base teórica em Psicanálise e
-        Programação Neurolinguística (PNL), com finalidade educativa.
-      </p>
+      <p className="text-sm">© 2024 RelateFlow - Abordagem Psicanálise & PNL</p>
+      <div className="mt-4 flex justify-center gap-4 text-xs">
+        <span>Baseado em Freud, Klein, Bandler e Grinder</span>
+      </div>
     </div>
   </footer>
 );
-
 
 // --- Main App Component ---
 
@@ -55,58 +54,6 @@ const App: React.FC = () => {
   const [chatInput, setChatInput] = useState('');
   const [analysis, setAnalysis] = useState<string>('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
- 
-  // 🔐 CONTROLE DE ACESSO TEMPORÁRIO (24H)
-  const ACCESS_PASSWORD = "TESTE24H";
-  const ACCESS_DURATION = 24 * 60 * 60 * 1000; // 24 horas
-
-  const [isAuthorized, setIsAuthorized] = useState<boolean>(() => {
-    const storedAccess = localStorage.getItem("accessGrantedAt");
-    if (!storedAccess) return false;
-
-    const grantedAt = Number(storedAccess);
-    return Date.now() - grantedAt < ACCESS_DURATION;
-  });
-
-  const [passwordInput, setPasswordInput] = useState("");
-  const [accessError, setAccessError] = useState("");
-  const handleAccessSubmit = () => {
-    if (passwordInput === ACCESS_PASSWORD) {
-      localStorage.setItem("accessGrantedAt", Date.now().toString());
-      setIsAuthorized(true);
-      setAccessError("");
-    } else {
-      setAccessError("Código inválido. Verifique e tente novamente.");
-    }
-  };
-
- 
-const getGreeting = (name?: string) => {
-  const hour = new Date().getHours();
-
-  let greeting = "Olá";
-
-  if (hour >= 0 && hour <= 11) greeting = "Bom dia";
-  else if (hour >= 12 && hour <= 17) greeting = "Boa tarde";
-  else greeting = "Boa noite";
-
-  return name && name.trim()
-    ? `${greeting}, ${name}`
-    : greeting;
-};
-
-
-const resetApp = () => {
-  
-  setView('home');
-  setCurrentQuestion(0);
-  setAnswers([]);
-  setResult(null);
-  setChatInput('');
-  setAnalysis('');
-  setIsAnalyzing(false);
- // 🔴 ESSENCIAL
-};
 
   const startQuiz = () => {
     setView('quiz');
@@ -120,10 +67,11 @@ const resetApp = () => {
       setAnswers(newAnswers);
       setCurrentQuestion(currentQuestion + 1);
     } else {
-     calculateResult(newAnswers);
+      calculateResult(newAnswers);
     }
   };
-const calculateResult = (finalAnswers: RelationalStyle[]) => {
+
+  const calculateResult = (finalAnswers: RelationalStyle[]) => {
     const scores = finalAnswers.reduce((acc, style) => {
       acc[style] = (acc[style] || 0) + 1;
       return acc;
@@ -138,89 +86,20 @@ const calculateResult = (finalAnswers: RelationalStyle[]) => {
     });
     setView('result');
   };
-const handleConsultAI = async () => {
-  if (!result || isAnalyzing) return;
 
-  setIsAnalyzing(true);
+  const handleConsultAI = async () => {
+    if (!result || isAnalyzing) return;
+    setIsAnalyzing(true);
+    const context = chatInput || "Fale mais sobre o meu perfil combinado e como isso afeta minhas relações digitais.";
+    const response = await getRelationalAnalysis(result.primary, result.secondary, context);
+    setAnalysis(response);
+    setIsAnalyzing(false);
+  };
 
-  const hour = new Date().getHours();
-
-  let greeting = "Olá";
-
-  if (hour < 12) {
-    greeting = "Bom dia";
-  } else if (hour < 18) {
-    greeting = "Boa tarde";
-  } else {
-    greeting = "Boa noite";
-  }
-
-  const name = chatInput.trim();
-  const greetingText = name
-    ? `${greeting}, ${name}.`
-    : `${greeting}.`;
-
-  const context = `
-${greetingText}
-
-Com base no meu perfil relacional, gostaria de uma reflexão educativa
-sobre como diferentes estilos de comunicação impactam relações no ambiente digital.
-`;
-
-  const response = await getRelationalAnalysis(
-    result.primary,
-    result.secondary,
-    context
-  );
-
-  setAnalysis(response);
-  setIsAnalyzing(false);
-};
-// 🔒 BLOQUEIO DE ACESSO
-if (!isAuthorized) {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
-      <div className="bg-white p-8 rounded-2xl shadow-xl border border-slate-200 max-w-md w-full">
-        <h2 className="text-2xl font-bold text-slate-800 mb-4 text-center">
-          Acesso Restrito
-        </h2>
-
-        <p className="text-sm text-slate-600 mb-6 text-center">
-          Digite a senha temporária para acessar o aplicativo.
-          <br />
-          <span className="italic">Acesso válido por 24 horas.</span>
-        </p>
-
-        <input
-          type="password"
-          value={passwordInput}
-          onChange={(e) => setPasswordInput(e.target.value)}
-          placeholder="Senha de acesso"
-          className="w-full p-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-400 outline-none mb-4"
-        />
-
-        {accessError && (
-          <p className="text-sm text-red-500 mb-4 text-center">
-            {accessError}
-          </p>
-        )}
-
-        <button
-          onClick={handleAccessSubmit}
-          className="w-full bg-indigo-600 text-white py-3 rounded-xl font-bold hover:bg-indigo-700 transition-colors"
-        >
-          Entrar
-        </button>
-      </div>
-    </div>
-  );
-}
-
- 
-return (
     <div className="min-h-screen flex flex-col">
       <Header />
-     
+
       <main className="flex-grow">
         {view === 'home' && (
           <div className="animate-in fade-in duration-700">
@@ -232,9 +111,8 @@ return (
                   <span className="text-indigo-600 italic">Eu Me Relaciono</span>
                 </h1>
                 <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-  Um espaço estruturado de reflexão educativa para ampliar a percepção sobre vínculos e interações ao longo da vida.
-</p>
-                
+                  Uma jornada profunda unindo a <strong>Psicanálise</strong> e a <strong>Programação Neurolinguística (PNL)</strong> para transformar seus vínculos.
+                </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                   <button 
                     onClick={startQuiz}
@@ -260,11 +138,8 @@ return (
                   Relacionar-se é uma arte complexa. Desde os primeiros anos de vida, buscamos no outro uma resposta para nossas necessidades emocionais: ser acolhido, ouvido, visto, reconhecido.
                 </p>
                 <p>
-  Estudos teóricos da Psicanálise e da Programação Neurolinguística (PNL) descrevem
-  padrões de percepção e comunicação que ajudam a compreender estilos de interação:
-  <strong> Visual, Auditivo e Cinestésico</strong>.
-</p>
-
+                  A psicanálise nos ensina que repetimos padrões inconscientes. A PNL nos oferece um mapa prático através dos canais: <strong>Visual, Auditivo e Cinestésico</strong>.
+                </p>
                 <div className="grid md:grid-cols-3 gap-6 my-12">
                   <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
                     <div className="text-indigo-600 mb-3">
@@ -357,10 +232,7 @@ return (
                   <h3 className="text-3xl font-bold mt-2 mb-4">{STYLE_DETAILS[result.primary].title}</h3>
                   <div className="space-y-4 text-indigo-50">
                     <p><strong>PNL:</strong> {STYLE_DETAILS[result.primary].pnl}</p>
-                    <p>
-  <strong>Leitura teórica inspirada na Psicanálise:</strong>{' '}
-  {STYLE_DETAILS[result.primary].psycho}
-</p>
+                    <p><strong>Psicanálise:</strong> {STYLE_DETAILS[result.primary].psycho}</p>
                   </div>
                 </div>
 
@@ -415,47 +287,25 @@ return (
                     disabled={isAnalyzing}
                     className="bg-rose-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-rose-600 transition-colors disabled:opacity-50 flex items-center gap-2"
                   >
-                    {isAnalyzing ? 'Analisando...' :'Obter Reflexão Educacional'}
+                    {isAnalyzing ? 'Analisando...' : 'Obter Análise Profunda'}
                     {!isAnalyzing && <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>}
                   </button>
                 </div>
-{analysis && (
-  <div className="mt-8 p-6 bg-rose-50 border border-rose-100 rounded-2xl text-slate-800 leading-relaxed animate-in fade-in slide-in-from-top-2">
 
-    <div className="flex items-center gap-2 mb-3 text-rose-600 font-bold text-xs uppercase tracking-widest">
-   <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="16"
-  height="16"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  strokeWidth="2"
->
-  <path d="M12 2v20" />
-</svg>
-
-<span>{getGreeting()} • Reflexão Educacional</span>
-  
- 
-    </div>
-
-    <p className="whitespace-pre-wrap mb-4">{analysis}</p>
-
-    </div>
-)}
-
-
-
-
-
-
-
+                {analysis && (
+                  <div className="mt-8 p-6 bg-rose-50 border border-rose-100 rounded-2xl text-slate-800 leading-relaxed animate-in fade-in slide-in-from-top-2">
+                    <div className="flex items-center gap-2 mb-3 text-rose-600 font-bold text-xs uppercase tracking-widest">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20"/><path d="m17 17-5 5-5-5"/><path d="m17 7-5-5-5 5"/></svg>
+                      Análise Sistêmica
+                    </div>
+                    <p className="whitespace-pre-wrap">{analysis}</p>
+                  </div>
+                )}
               </div>
 
               <div className="text-center">
                 <button 
-                  onClick={resetApp}
+                  onClick={() => setView('home')}
                   className="text-slate-400 hover:text-indigo-600 font-medium transition-colors"
                 >
                   Voltar ao Início
@@ -465,6 +315,7 @@ return (
           </section>
         )}
       </main>
+
       <Footer />
     </div>
   );
