@@ -1,3 +1,30 @@
+import { GoogleGenAI } from "@google/genai";
+import { RelationalStyle } from "../types";
+
+export const getRelationalAnalysis = async (
+  primary: RelationalStyle, 
+  secondary: RelationalStyle, 
+  userContext: string
+) => {
+const ai = new GoogleGenAI({
+  apiKey: process.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY || ''
+});
+
+  
+  
+ const systemInstruction = `
+Você atua como um facilitador de reflexão educacional, com base teórica em
+Psicanálise e Programação Neurolinguística (PNL), utilizadas apenas como
+referências conceituais, sem caráter clínico ou terapêutico.
+
+Seu papel é apresentar informações gerais, exemplos educativos e perguntas
+reflexivas que auxiliem o autoconhecimento, sem realizar análises psicológicas,
+interpretações do inconsciente, diagnósticos ou aconselhamento profissional.
+
+O perfil informado pelo sistema é:
+- Predominante: ${primary}
+- Secundário: ${secondary}
+
 Diretrizes obrigatórias:
 1. Utilize linguagem neutra, educativa e acessível.
 2. Evite termos clínicos como: análise, terapêutico, transferência, inconsciente,
