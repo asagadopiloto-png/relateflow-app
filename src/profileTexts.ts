@@ -1,3 +1,29 @@
+import { RelationalStyle } from "./types";
+
+export const PROFILE_TEXTS = {
+  [RelationalStyle.VISUAL]: {
+    title: "Perfil Visual",
+    text: `
+Você se orienta pelo que vê, percebe detalhes e sinais sutis.
+No ambiente digital, a ausência de expressões e contexto visual
+faz com que sua mente complete lacunas, o que pode gerar
+interpretações equivocadas e frustrações emocionais.
+
+Caminho terapêutico:
+Busque clareza antes de concluir.
+Nem todo silêncio é rejeição.
+Prefira comunicações visuais ou videochamadas.
+`,
+  },
+
+  [RelationalStyle.AUDITORY]: {
+    title: "Perfil Auditivo",
+    text: `
+Você organiza o mundo pela palavra, pelo diálogo e pelo tom.
+No digital, a falta de voz pode gerar ruídos emocionais
+e sensação de não ser compreendido.
+
+Caminho terapêutico:
 Peça esclarecimentos.
 Use áudios quando necessário.
 Observe se você fala para se explicar ou para aliviar ansiedade.
