@@ -6,10 +6,6 @@ export default async function handler(req, res) {
   try {
     const { profile, secondary, userText } = req.body;
 
-    if (!process.env.GEMINI_API_KEY) {
-      return res.status(500).json({ error: "API Key não configurada" });
-    }
-
     const systemInstruction = `
 Você atua como um facilitador de reflexão educacional, com base teórica em
 Psicanálise e Programação Neurolinguística (PNL), utilizadas apenas como
@@ -34,9 +30,8 @@ Diretrizes obrigatórias:
 6. Responda sempre em Português do Brasil.
 `;
 
-   const response = await fetch(
-  const response = await fetch(
-  "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent",,
+    const response = await fetch(
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent",
       {
         method: "POST",
         headers: {
@@ -52,7 +47,7 @@ Diretrizes obrigatórias:
 
 Reflexão do usuário:
 "${userText}"
-`,
+                  `,
                 },
               ],
             },
@@ -64,13 +59,20 @@ Reflexão do usuário:
     const data = await response.json();
 
     const text =
-      data?.candidates?.[0]?.content?.parts?.[0]?.text ||
-      "Não foi possível gerar a reflexão.";
+      data?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+    if (!text) {
+      return res.status(200).json({
+        analysis: "Não foi possível gerar a reflexão.",
+      });
+    }
 
     return res.status(200).json({ analysis: text });
 
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: "Erro ao processar reflexão" });
+    console.error("Erro API:", error);
+    return res.status(500).json({
+      analysis: "Erro ao gerar análise.",
+    });
   }
 }
