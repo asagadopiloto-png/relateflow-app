@@ -314,6 +314,7 @@ const handleAnalyzeSecure = async () => {
                   <button
                     onClick={handleConsultAI}
                     disabled={isAnalyzing}
+                    style={{ display: 'none' }}
                     className="bg-rose-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-rose-600 transition-colors disabled:opacity-50 flex items-center gap-2"
                   >
                     {isAnalyzing ? 'Analisando...' : 'Obter Análise Profunda'}
