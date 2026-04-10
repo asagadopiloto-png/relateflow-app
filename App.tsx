@@ -80,8 +80,8 @@ const handleAnalyzeSecure = async () => {
     console.error(error);
     setAnalysis("Erro ao conectar com análise segura.");
   } finally {
-    setIsAnalyzing(false);
-  }
+  setIsAnalyzingSecure(false);
+}
 };
   
   const startQuiz = () => {
