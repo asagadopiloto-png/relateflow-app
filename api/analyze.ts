@@ -34,8 +34,8 @@ Diretrizes obrigatórias:
 6. Responda sempre em Português do Brasil.
 `;
 
-    const response = await fetch(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent",
+   const response = await fetch(
+  "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent",
       {
         method: "POST",
         headers: {
