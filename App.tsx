@@ -23,7 +23,6 @@ const Header: React.FC = () => (
     </div>
   </header>
 );
-
 const Footer: React.FC = () => (
   <footer className="bg-slate-900 text-slate-400 py-12 px-4">
     <div className="max-w-5xl mx-auto text-center">
@@ -57,9 +56,9 @@ const App: React.FC = () => {
   const [isAnalyzingSecure, setIsAnalyzingSecure] = useState(false);
 const USE_NEW_API = false;
 const handleAnalyzeSecure = async () => {
-  if (!chatInput.trim()) return;
-
   setIsAnalyzingSecure(true);
+
+  const context = chatInput || "Fale mais sobre o meu perfil combinado e como isso afeta minhas relações digitais.";
 
   try {
     const response = await fetch('/api/analyze', {
@@ -68,20 +67,19 @@ const handleAnalyzeSecure = async () => {
       body: JSON.stringify({
         profile: result?.primary,
         secondary: result?.secondary,
-        userText: chatInput
+        userText: context
       })
     });
 
     const data = await response.json();
-
     setAnalysis(data.analysis);
 
   } catch (error) {
     console.error(error);
     setAnalysis("Erro ao conectar com análise segura.");
   } finally {
-  setIsAnalyzingSecure(false);
-}
+    setIsAnalyzingSecure(false);
+  }
 };
   
   const startQuiz = () => {
