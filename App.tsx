@@ -321,7 +321,7 @@ const handleAnalyzeSecure = async () => {
                   </button>
                 <button
   onClick={handleAnalyzeSecure}
-  disabled={isAnalyzing}
+  disabled={isAnalyzingSecure}
   className="bg-green-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-green-700 transition-colors disabled:opacity-50 mt-2"
 >
   Testar Análise Segura 🔐
