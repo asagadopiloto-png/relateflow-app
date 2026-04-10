@@ -55,6 +55,34 @@ const App: React.FC = () => {
   const [analysis, setAnalysis] = useState<string>('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
 const USE_NEW_API = false;
+const handleAnalyzeSecure = async () => {
+  if (!chatInput.trim()) return;
+
+  setIsAnalyzing(true);
+
+  try {
+    const response = await fetch('/api/analyze', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        profile: result?.primary,
+        secondary: result?.secondary,
+        userText: chatInput
+      })
+    });
+
+    const data = await response.json();
+
+    setAnalysis(data.analysis);
+
+  } catch (error) {
+    console.error(error);
+    setAnalysis("Erro ao conectar com análise segura.");
+  } finally {
+    setIsAnalyzing(false);
+  }
+};
+  
   const startQuiz = () => {
     setView('quiz');
     setCurrentQuestion(0);
