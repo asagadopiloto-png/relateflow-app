@@ -59,7 +59,7 @@ const USE_NEW_API = false;
 const handleAnalyzeSecure = async () => {
   if (!chatInput.trim()) return;
 
-  setIsAnalyzing(true);
+  setIsAnalyzingSecure(true);
 
   try {
     const response = await fetch('/api/analyze', {
