@@ -54,6 +54,7 @@ const App: React.FC = () => {
   const [chatInput, setChatInput] = useState('');
   const [analysis, setAnalysis] = useState<string>('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [isAnalyzingSecure, setIsAnalyzingSecure] = useState(false);
 const USE_NEW_API = false;
 const handleAnalyzeSecure = async () => {
   if (!chatInput.trim()) return;
