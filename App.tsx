@@ -13,7 +13,7 @@ const Header: React.FC = () => (
         <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="M12 7v10"/><path d="M8 12h8"/></svg>
         </div>
-        <span className="font-bold text-slate-800 text-xl tracking-tight">RelateFlow</span>
+        <span className="font-bold text-slate-800 text-xl tracking-tight">EMOVINCULO.ORG</span>
       </div>
       <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
         <a href="#about" className="hover:text-indigo-600 transition-colors">Sobre</a>
