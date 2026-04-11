@@ -202,7 +202,7 @@ if (!isAuthorized) {
                   <span className="text-indigo-600 italic">Eu Me Relaciono</span>
                 </h1>
                 <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-                  Uma jornada profunda unindo a <strong>Psicanálise</strong> e a <strong>Programação Neurolinguística (PNL)</strong> para transformar seus vínculos.
+  Um espaço estruturado de reflexão educativa para ampliar a percepção sobre vínculos e interações ao longo da vida.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                   <button 
