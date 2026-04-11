@@ -58,7 +58,7 @@ const USE_NEW_API = false;
 const handleAnalyzeSecure = async () => {
   setIsAnalyzingSecure(true);
 
-  const context = chatInput || "Fale mais sobre o meu perfil combinado e como isso afeta minhas relações digitais.";
+  const context = chatInput || "Quero uma explicação clara e educativa sobre meu perfil relacional e como isso impacta minhas relações digitais.";
 
   try {
     const response = await fetch('/api/analyze', {
