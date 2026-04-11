@@ -59,13 +59,13 @@ Reflexão do usuário:
     const data = await response.json();
 
     const text =
-      data?.candidates?.[0]?.content?.parts?.[0]?.text;
+  data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
-    if (!text) {
-      return res.status(200).json({
-        analysis: "Não foi possível gerar a reflexão.",
-      });
-    }
+if (!text) {
+  return res.status(200).json({
+    analysis: "Não foi possível gerar a reflexão no momento. Tente novamente."
+  });
+}
 
     return res.status(200).json({ analysis: text });
 
