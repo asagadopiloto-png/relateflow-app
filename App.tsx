@@ -118,10 +118,12 @@ secondary: result?.secondary || "AUDITORY",
 };
   
   const startQuiz = () => {
-    setView('quiz');
-    setCurrentQuestion(0);
-    setAnswers([]);
-  };
+  setView('quiz');
+  setCurrentQuestion(0);
+  setAnswers([]);
+  setAnalysis('');
+  setChatInput('');
+};
 
   const handleAnswer = (style: RelationalStyle) => {
     const newAnswers = [...answers, style];
