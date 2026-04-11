@@ -152,13 +152,36 @@ secondary: result?.secondary || "AUDITORY",
   };
 
   const handleConsultAI = async () => {
-    if (!result || isAnalyzing) return;
-    setIsAnalyzing(true);
-    const context = chatInput || "Fale mais sobre o meu perfil combinado e como isso afeta minhas relações digitais.";
-    const response = await getRelationalAnalysis(result.primary, result.secondary, context);
-    setAnalysis(response);
+  if (!result || isAnalyzing) return;
+
+  setIsAnalyzing(true);
+
+  const context =
+    chatInput ||
+    "Fale mais sobre o meu perfil combinado e como isso afeta minhas relações digitais.";
+
+  try {
+    const response = await fetch('/api/analyze', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        profile: result.primary,
+        secondary: result.secondary,
+        userText: context,
+      }),
+    });
+
+    const data = await response.json();
+
+    setAnalysis(data.analysis);
+
+  } catch (error) {
+    console.error(error);
+    setAnalysis("Erro ao conectar com análise segura.");
+  } finally {
     setIsAnalyzing(false);
-  };
+  }
+};
 if (!isAuthorized) {
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-100">
