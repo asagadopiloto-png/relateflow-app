@@ -157,7 +157,36 @@ secondary: result?.secondary || "AUDITORY",
     setAnalysis(response);
     setIsAnalyzing(false);
   };
+if (!isAuthorized) {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-slate-100">
+      <div className="bg-white p-8 rounded-2xl shadow-xl text-center w-full max-w-sm">
+        <h2 className="text-xl font-bold mb-4 text-slate-800">
+          Acesso ao EMO Vínculo
+        </h2>
 
+        <input
+          type="password"
+          value={passwordInput}
+          onChange={(e) => setPasswordInput(e.target.value)}
+          placeholder="Digite a senha"
+          className="border p-3 rounded-xl mb-4 w-full"
+        />
+
+        <button
+          onClick={handleAccessSubmit}
+          className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-bold w-full"
+        >
+          Entrar
+        </button>
+
+        {accessError && (
+          <p className="text-red-500 mt-3 text-sm">{accessError}</p>
+        )}
+      </div>
+    </div>
+  );
+}
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
