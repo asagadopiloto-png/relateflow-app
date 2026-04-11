@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { RelationalStyle, QuizResult } from './types';
 import { QUIZ_QUESTIONS, STYLE_DETAILS } from './constants';
-import { getRelationalAnalysis } from './services/geminiService';
+import { Testar Análise Segura } from './services/geminiService';
 
 // --- Sub-components ---
 
