@@ -65,8 +65,8 @@ const handleAnalyzeSecure = async () => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        profile: result?.primary,
-        secondary: result?.secondary,
+        profile: result?.primary || "VISUAL",
+secondary: result?.secondary || "AUDITORY",
         userText: context
       })
     });
