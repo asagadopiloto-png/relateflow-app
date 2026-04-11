@@ -56,6 +56,38 @@ const App: React.FC = () => {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [isAnalyzingSecure, setIsAnalyzingSecure] = useState(false);
 
+// 🔐 CONTROLE DE ACESSO (TESTE 24H / 30 DIAS)
+const ACCESS_RULES: Record<string, number> = {
+  "TESTE 24 HORAS": 24 * 60 * 60 * 1000,
+  "TESTE 30 DIAS": 30 * 24 * 60 * 60 * 1000
+};
+
+const [isAuthorized, setIsAuthorized] = useState<boolean>(() => {
+  const storedAccess = localStorage.getItem("accessGrantedAt");
+  const expiresIn = localStorage.getItem("expiresIn");
+
+  if (!storedAccess || !expiresIn) return false;
+
+  const grantedAt = Number(storedAccess);
+  return Date.now() - grantedAt < Number(expiresIn);
+});
+
+const [passwordInput, setPasswordInput] = useState("");
+const [accessError, setAccessError] = useState("");
+
+const handleAccessSubmit = () => {
+  const duration = ACCESS_RULES[passwordInput.trim()];
+
+  if (duration) {
+    localStorage.setItem("accessGrantedAt", Date.now().toString());
+    localStorage.setItem("expiresIn", duration.toString());
+
+    setIsAuthorized(true);
+    setAccessError("");
+  } else {
+    setAccessError("Código inválido. Verifique e tente novamente.");
+  }
+};
   
 const USE_NEW_API = false;
 const handleAnalyzeSecure = async () => {
