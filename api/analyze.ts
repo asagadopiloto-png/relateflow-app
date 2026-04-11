@@ -38,7 +38,7 @@ Diretrizes obrigatórias:
           "Content-Type": "application/json",
           "x-goog-api-key": process.env.GEMINI_API_KEY,
         },
-        console.log("API KEY:", process.env.GEMINI_API_KEY);
+       
         body: JSON.stringify({
           contents: [
             {
