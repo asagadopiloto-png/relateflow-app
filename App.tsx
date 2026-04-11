@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import { RelationalStyle, QuizResult } from './types';
 import { QUIZ_QUESTIONS, STYLE_DETAILS } from './constants';
 import { getRelationalAnalysis } from './services/geminiService';
+
 
 // --- Sub-components ---
 
@@ -376,6 +376,7 @@ if (!isAuthorized) {
                     className="w-full p-4 rounded-2xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-rose-200 outline-none transition-all h-24"
                   />
                   
+          
                 <button
   onClick={handleAnalyzeSecure}
   disabled={isAnalyzingSecure}
