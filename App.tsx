@@ -55,9 +55,7 @@ const App: React.FC = () => {
   const [analysis, setAnalysis] = useState<string>('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [isAnalyzingSecure, setIsAnalyzingSecure] = useState(false);
-// 🔐 CONTROLE DE ACESSO TEMPORÁRIO (24H)
-  const ACCESS_PASSWORD = "TESTE24H";
-  const ACCESS_DURATION = 24 * 60 * 60 * 1000; // 24 horas
+
   
 const USE_NEW_API = false;
 const handleAnalyzeSecure = async () => {
