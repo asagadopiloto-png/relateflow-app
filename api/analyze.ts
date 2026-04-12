@@ -57,18 +57,27 @@ Reflexão do usuário:
       }
     );
 
-    const data = await response.json();
+   const data = await response.json();
 
-    const text =
-  data?.candidates?.[0]?.content?.parts?.[0]?.text;
+let text = null;
+
+if (data?.candidates?.length) {
+  const parts = data.candidates[0].content?.parts;
+
+  if (parts && parts.length) {
+    text = parts.map(p => p.text).join(" ");
+  }
+}
 
 if (!text) {
+  console.log("RESPOSTA GEMINI:", JSON.stringify(data, null, 2));
+
   return res.status(200).json({
     analysis: "Não foi possível gerar a reflexão no momento. Tente novamente."
   });
 }
 
-    return res.status(200).json({ analysis: text });
+return res.status(200).json({ analysis: text }); 
 
   } catch (error) {
     console.error("Erro API:", error);
