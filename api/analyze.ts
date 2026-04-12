@@ -29,6 +29,7 @@ Diretrizes obrigatórias:
 5. Estimule reflexão por meio de perguntas abertas e observações gerais.
 6. Responda sempre em Português do Brasil.
 `;
+console.log("API KEY EXISTE?", !!process.env.GEMINI_API_KEY);
 
     const response = await fetch(
       "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent",
@@ -58,7 +59,7 @@ Reflexão do usuário:
     );
 
    const data = await response.json();
-
+console.log("RESPOSTA GEMINI:", JSON.stringify(data, null, 2));
 let text = null;
 
 if (data?.candidates?.length) {
