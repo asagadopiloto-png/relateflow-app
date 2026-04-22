@@ -74,7 +74,7 @@ if (!text) {
   console.log("RESPOSTA GEMINI:", JSON.stringify(data, null, 2));
 
   return res.status(200).json({
-    analysis: "Não foi possível gerar a reflexão no momento. Tente novamente."
+    analysis: "Estamos com instabilidade no serviço de análise. Tente novamente em alguns segundos."
   });
 }
 
