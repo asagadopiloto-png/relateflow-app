@@ -15,9 +15,11 @@ const Header: React.FC = () => (
         </div>
         <span className="font-bold text-slate-800 text-xl tracking-tight">EMOVINCULO.ORG</span>
       </div>
-      <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
-        
-      </nav>
+       <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
+        <a href="#about" className="hover:text-indigo-600 transition-colors">Sobre</a>
+        <a href="#styles" className="hover:text-indigo-600 transition-colors">Estilos</a>
+        <a href="#quiz" className="hover:text-indigo-600 transition-colors">Descobrir</a>
+     </nav>
     </div>
   </header>
 );
