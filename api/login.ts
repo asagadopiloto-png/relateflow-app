@@ -13,12 +13,15 @@ export default async function handler(req, res) {
         error: 'Senha do servidor não configurada'
       });
     }
+console.log("SENHA DIGITADA:", password);
+console.log("SENHA VERCEL:", process.env.APP_PASSWORD);
 
-    if (password !== process.env.APP_PASSWORD) {
-      return res.status(401).json({
-        error: 'Senha inválida'
-      });
-    }
+if (password !== process.env.APP_PASSWORD) {
+  return res.status(401).json({
+    error: 'Senha inválida'
+  });
+}
+    
 
     return res.status(200).json({
       success: true
