@@ -57,37 +57,47 @@ const App: React.FC = () => {
   const [isAnalyzingSecure, setIsAnalyzingSecure] = useState(false);
 
 // 🔐 CONTROLE DE ACESSO (TESTE 24H / 30 DIAS)
-const ACCESS_RULES: Record<string, number> = {
-  "TESTE 24 HORAS": 24 * 60 * 60 * 1000,
-  "TESTE 30 DIAS": 30 * 24 * 60 * 60 * 1000
-};
-
 const [isAuthorized, setIsAuthorized] = useState<boolean>(() => {
-  const storedAccess = localStorage.getItem("accessGrantedAt");
-  const expiresIn = localStorage.getItem("expiresIn");
-
-  if (!storedAccess || !expiresIn) return false;
-
-  const grantedAt = Number(storedAccess);
-  return Date.now() - grantedAt < Number(expiresIn);
+  return localStorage.getItem("emo-auth") === "true";
 });
 
 const [passwordInput, setPasswordInput] = useState("");
 const [accessError, setAccessError] = useState("");
+const [isLoggingIn, setIsLoggingIn] = useState(false);
 
-const handleAccessSubmit = () => {
-  const duration = ACCESS_RULES[passwordInput.trim()];
+const handleAccessSubmit = async () => {
+  if (isLoggingIn) return;
 
-  if (duration) {
-    localStorage.setItem("accessGrantedAt", Date.now().toString());
-    localStorage.setItem("expiresIn", duration.toString());
+  setIsLoggingIn(true);
+  setAccessError("");
 
-    setIsAuthorized(true);
-    setAccessError("");
-  } else {
-    setAccessError("Código inválido. Verifique e tente novamente.");
+  try {
+    const response = await fetch("/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        password: passwordInput,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok && data.success) {
+      localStorage.setItem("emo-auth", "true");
+      setIsAuthorized(true);
+    } else {
+      setAccessError("Senha inválida.");
+    }
+  } catch (error) {
+    console.error(error);
+    setAccessError("Erro ao conectar.");
+  } finally {
+    setIsLoggingIn(false);
   }
 };
+  
   
 const USE_NEW_API = false;
 const handleAnalyzeSecure = async () => {
