@@ -7,7 +7,7 @@ export default async function handler(req, res) {
 
   try {
     const { password } = req.body;
-
+ console.log("APP_PASSWORD:", process.env.APP_PASSWORD);
     if (!process.env.APP_PASSWORD) {
       return res.status(500).json({
         error: 'Senha do servidor não configurada'
