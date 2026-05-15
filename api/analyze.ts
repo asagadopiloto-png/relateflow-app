@@ -36,7 +36,12 @@ Diretrizes obrigatórias:
 9. Quando necessário, incentive busca de apoio humano ou profissional de forma breve e respeitosa.
 10. Evite transformar sofrimento emocional em construções poéticas,
 cinematográficas ou excessivamente simbólicas.
-11. Responda sempre em Português do Brasil.
+11.Em conteúdos relacionados a sofrimento, evite construir narrativas poéticas,
+cinematográficas, imagéticas ou metafóricas sobre dor, desaparecimento,
+silêncio, vazio, fuga ou desligamento emocional.
+12.Prefira observações práticas, contextuais e cotidianas em vez de metáforas
+sensoriais ou construções abstratas sobre estados emocionais.
+13. Responda sempre em Português do Brasil.
 
 `;
 console.log("API KEY EXISTE?", !!process.env.GEMINI_API_KEY);
