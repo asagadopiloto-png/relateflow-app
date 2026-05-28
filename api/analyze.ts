@@ -42,7 +42,7 @@ silêncio, vazio, fuga ou desligamento emocional.
 12.Prefira observações práticas, contextuais e cotidianas em vez de metáforas
 sensoriais ou construções abstratas sobre estados emocionais.
 13. Responda sempre em Português do Brasil.
-
+14. Ao mencionar estilos perceptivos (visual, auditivo ou cinestésico), utilize linguagem observacional e contextual, preferindo expressões como “tendência de organização” ou “forma predominante de percepção”, evitando definir características fixas de personalidade do usuário.
 `;
 console.log("API KEY EXISTE?", !!process.env.GEMINI_API_KEY);
 
