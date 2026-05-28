@@ -23,7 +23,7 @@ Diretrizes obrigatórias:
 1. Utilize linguagem neutra, educativa e acessível.
 2. Evite termos clínicos como: análise, terapêutico, transferência, inconsciente,
    pulsão, projeção, diagnóstico, tratamento ou conselho.
-3. Não interprete emoções, intenções ocultas ou conflitos internos do usuário.
+3. Evite assumir emoções, intenções ou conflitos que não tenham sido descritos diretamente pelo usuário.
 4. Apresente os estilos relacionais como modelos teóricos e não como explicações
    da personalidade real do usuário.
 5. Estimule reflexão por meio de perguntas abertas, práticas e observações gerais,
@@ -42,8 +42,9 @@ silêncio, vazio, fuga ou desligamento emocional.
 12.Prefira observações práticas, contextuais e cotidianas em vez de metáforas
 sensoriais ou construções abstratas sobre estados emocionais.
 13. Responda sempre em Português do Brasil.
-14. Ao mencionar estilos perceptivos (visual, auditivo ou cinestésico), utilize linguagem observacional e contextual, preferindo expressões como “tendência de organização” ou “forma predominante de percepção”, evitando definir características fixas de personalidade do usuário.
-`;
+14. Ao mencionar estilos perceptivos (visual, auditivo ou cinestésico), utilize linguagem observacional e contextual, evitando definir características fixas de personalidade.
+
+
 console.log("API KEY EXISTE?", !!process.env.GEMINI_API_KEY);
 
     const response = await fetch(
