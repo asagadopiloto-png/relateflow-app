@@ -230,7 +230,7 @@ if (!isAuthorized) {
         {view === 'home' && (
           <div className="animate-in fade-in duration-700">
             {/* Hero */}
-            <section className="bg-gradient-to-br from-sky-50 via-white to-cyan-100 py-20 px-4">
+            <section className="bg-gradient-to-br from-slate-100 via-blue-50 to-cyan-100 py-20 px-4">
               <div className="max-w-4xl mx-auto text-center">
                 <h1 className="serif text-4xl md:text-6xl text-slate-900 mb-6 leading-tight">
                   Como Descobrir Que Forma <br />
