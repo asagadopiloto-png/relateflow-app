@@ -242,7 +242,7 @@ if (!isAuthorized) {
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                   <button 
                     onClick={startQuiz}
-                    className="bg-indigo-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-indigo-700 transition-all transform hover:-translate-y-1"
+                    className="bg-gradient-to-r from-blue-700 via-cyan-600 to-emerald-500 text-white px-8 py-4 rounded-full font-semibold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
                   >
                     Fazer o Teste de Perfil
                   </button>
