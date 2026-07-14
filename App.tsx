@@ -248,7 +248,7 @@ if (!isAuthorized) {
                   </button>
                   <a 
                     href="#intro"
-                   className="bg-white/90 backdrop-blur-sm text-slate-700 border border-slate-300 px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                   className="bg-gradient-to-r from-slate-100 via-blue-50 to-cyan-50 text-slate-700 border border-blue-200 px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
                   >
                     Ler Prefácio
                   </a>
