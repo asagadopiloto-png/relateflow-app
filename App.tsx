@@ -393,7 +393,7 @@ if (!isAuthorized) {
               {/* AI Coaching Integration */}
               <div className="bg-white border-2 border-rose-100 p-8 rounded-3xl shadow-sm mb-12">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-rose-500 rounded-full flex items-center justify-center text-white">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-700 via-cyan-600 to-emerald-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                   </div>
                   <div>
