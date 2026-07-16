@@ -270,21 +270,21 @@ if (!isAuthorized) {
                 </p>
                 <div className="grid md:grid-cols-3 gap-6 my-12">
                   <div className="p-6 bg-white rounded-3xl border border-slate-200 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                    <div className="text-indigo-600 mb-3">
+                    <div className="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center mb-5 shadow-md">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
                     </div>
                     <h4 className="font-bold text-slate-800 mb-2">Visual</h4>
                     <p className="text-sm">Vive por meio das imagens, detalhes e expressões.</p>
                   </div>
                   <div className="p-6 bg-white rounded-3xl border border-slate-200 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                    <div className="text-rose-600 mb-3">
+                    <div className="w-14 h-14 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center mb-5 shadow-md">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 5.6a4.5 4.5 0 1 0-4.9 8.2l5.1 4 5.1-4a4.5 4.5 0 1 0-4.9-8.2L12 6.5Z"/><path d="m15 2 4 4"/><path d="m20 2-4 4"/></svg>
                     </div>
                     <h4 className="font-bold text-slate-800 mb-2">Auditivo</h4>
                     <p className="text-sm">Organiza o mundo através da palavra, música e diálogo.</p>
                   </div>
                   <div className="p-6 bg-white rounded-3xl border border-slate-200 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                    <div className="text-teal-600 mb-3">
+                    <div className="w-14 h-14 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center mb-5 shadow-md">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m18 15-6-6-6 6"/><path d="M12 9v12"/></svg>
                     </div>
                     <h4 className="font-bold text-slate-800 mb-2">Cinestésico</h4>
