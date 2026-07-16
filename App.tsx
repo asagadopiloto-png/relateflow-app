@@ -345,7 +345,7 @@ if (!isAuthorized) {
               </div>
 
               <div className="text-center mb-12">
-                className="bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500 text-white text-xs font-bold px-5 py-2 rounded-full uppercase tracking-widest shadow-lg">Resultado</span>
+                <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500 text-white text-xs font-bold px-5 py-2 rounded-full uppercase tracking-widest shadow-lg">Resultado</span>
                 <h2 className="serif text-5xl font-bold text-slate-900 mt-5 tracking-tight">Seu Perfil Relacional é Misto</h2>
                 <p className="text-slate-600 mt-3 text-lg">Você manifesta predominantemente dois estilos que se complementam.</p>
               </div>
