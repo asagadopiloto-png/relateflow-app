@@ -365,7 +365,7 @@ if (!isAuthorized) {
                 </div>
 
                 {/* Secondary Card */}
-                <div className="bg-white border-2 border-indigo-100 p-8 rounded-3xl shadow-lg relative overflow-hidden group">
+                <div className="bg-gradient-to-br from-white via-cyan-50 to-blue-50 border-2 border-cyan-200 p-8 rounded-3xl shadow-lg hover:shadow-cyan-200/40 transition-all duration-500 relative overflow-hidden group">
                    <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:scale-110 transition-transform text-indigo-600">
                     <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/></svg>
                   </div>
