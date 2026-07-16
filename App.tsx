@@ -232,9 +232,9 @@ if (!isAuthorized) {
             {/* Hero */}
             <section className="bg-gradient-to-br from-slate-100 via-blue-50 to-cyan-100 py-20 px-4">
               <div className="max-w-4xl mx-auto text-center">
-                <h1 className="serif text-4xl md:text-6xl text-slate-900 mb-6 leading-tight">
+               <h1 className="serif text-5xl md:text-7xl font-bold text-slate-900 mb-6 leading-tight tracking-tight"> 
                   Como Descobrir Que Forma <br />
-                  <span className="text-indigo-600 italic">Eu Me Relaciono</span>
+                  <span className="bg-gradient-to-r from-blue-700 via-cyan-600 to-emerald-500 bg-clip-text text-transparent italic">Eu Me Relaciono</span>
                 </h1>
                 <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
   Um espaço estruturado de reflexão educativa para ampliar a percepção sobre vínculos e interações ao longo da vida.
