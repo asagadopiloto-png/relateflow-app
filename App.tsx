@@ -379,7 +379,7 @@ if (!isAuthorized) {
               </div>
 
               {/* Digital Context Section */}
-              <div className="bg-slate-50 p-8 rounded-3xl border border-slate-200 mb-12">
+              <div className="bg-gradient-to-br from-sky-50 via-white to-emerald-50 p-8 rounded-3xl border border-cyan-200 shadow-lg hover:shadow-cyan-200/40 transition-all duration-500 mb-12">
                 <h4 className="font-bold text-slate-800 mb-4 flex items-center gap-2">
                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
                    No Mundo Digital
