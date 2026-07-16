@@ -352,7 +352,7 @@ if (!isAuthorized) {
 
               <div className="grid md:grid-cols-2 gap-8 mb-12">
                 {/* Primary Card */}
-                <div className="bg-indigo-600 text-white p-8 rounded-3xl shadow-2xl relative overflow-hidden group">
+                <div className="bg-gradient-to-br from-blue-700 via-cyan-600 to-emerald-500 text-white p-8 rounded-3xl shadow-2xl hover:shadow-cyan-300/40 transition-all duration-500 relative overflow-hidden group">
                   <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform">
                     <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><circle cx="12" cy="12" r="10"/></svg>
                   </div>
