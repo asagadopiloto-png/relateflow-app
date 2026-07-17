@@ -417,7 +417,7 @@ if (!isAuthorized) {
   </p>
 </div>
                   
-                <p className="text-lg font-semibold text-slate-700 mb-2">Escolha um tema de reflexão e descreva a situação que deseja compreender melhor:</p>
+                
                   <textarea 
                     value={chatInput}
                     onChange={(e) => setChatInput(e.target.value)}
