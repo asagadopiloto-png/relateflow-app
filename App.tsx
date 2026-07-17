@@ -401,9 +401,11 @@ if (!isAuthorized) {
                     <p className="text-xs text-slate-500">Reflexão educativa personalizada sobre seus vínculos</p>
                   </div>
                 </div>
-                
                 <div className="space-y-4">
-                  <p className="text-lg font-semibold text-slate-700 mb-2">Escolha um tema de reflexão e descreva a situação que deseja compreender melhor:</p>
+                  <h5 className=""text-2xl font-bold text-slate-800 mb-4">
+                 Áreas de Reflexão
+                 </h5>
+                <p className="text-lg font-semibold text-slate-700 mb-2">Escolha um tema de reflexão e descreva a situação que deseja compreender melhor:</p>
                   <textarea 
                     value={chatInput}
                     onChange={(e) => setChatInput(e.target.value)}
