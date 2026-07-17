@@ -398,7 +398,7 @@ if (!isAuthorized) {
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-800">Converse com o EMO Vínculo(AI)</h4>
-                    <p className="text-xs text-slate-500">Aprofunde seu autoconhecimento</p>
+                    <p className="text-xs text-slate-500">Reflexão educativa personalizada sobre seus vínculos</p>
                   </div>
                 </div>
                 
