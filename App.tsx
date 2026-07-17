@@ -403,7 +403,7 @@ if (!isAuthorized) {
                 </div>
                 
                 <div className="space-y-4">
-                  <p className="text-sm text-slate-600">Pergunte algo específico sobre seus desafios nos relacionamentos atuais:</p>
+                  <p className="text-sm text-slate-600">Escolha um tema de reflexão e descreva a situação que deseja compreender melhor:</p>
                   <textarea 
                     value={chatInput}
                     onChange={(e) => setChatInput(e.target.value)}
