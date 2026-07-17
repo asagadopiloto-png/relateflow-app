@@ -405,6 +405,18 @@ if (!isAuthorized) {
                   <h5 className="text-3xl font-bold text-slate-800 mb-3 flex items-center gap-3">
   🍃 Áreas de Reflexão
 </h5>
+<div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-2xl p-5 mb-6 shadow-sm">
+  <h6 className="text-xl font-bold text-green-800 mb-2">
+    💬 Sobre qual área da sua vida você gostaria de refletir e compreender melhor?
+  </h6>
+
+  <p className="text-slate-700 leading-relaxed">
+    Escolha um dos temas abaixo apenas como referência e, em seguida,
+    descreva sua situação com suas próprias palavras. O objetivo é ampliar
+    sua percepção sobre seus vínculos de forma educativa e reflexiva.
+  </p>
+</div>
+                  
                 <p className="text-lg font-semibold text-slate-700 mb-2">Escolha um tema de reflexão e descreva a situação que deseja compreender melhor:</p>
                   <textarea 
                     value={chatInput}
