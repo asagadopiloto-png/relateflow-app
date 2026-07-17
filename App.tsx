@@ -402,7 +402,7 @@ if (!isAuthorized) {
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <h5 className=""text-2xl font-bold text-slate-800 mb-4">
+                  <h5 className="text-2xl font-bold text-slate-800 mb-4">
                  Áreas de Reflexão
                  </h5>
                 <p className="text-lg font-semibold text-slate-700 mb-2">Escolha um tema de reflexão e descreva a situação que deseja compreender melhor:</p>
