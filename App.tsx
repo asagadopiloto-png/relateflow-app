@@ -421,7 +421,7 @@ if (!isAuthorized) {
                   <textarea 
                     value={chatInput}
                     onChange={(e) => setChatInput(e.target.value)}
-                    placeholder="Ex: Por que sinto que meu parceiro não me escuta mesmo eu mandando fotos?"
+                    placeholder="Ex.: Escolhi refletir sobre Relacionamentos Familiares. Tenho dificuldade para conversar com meus filhos sem que as conversas terminem em conflito. Gostaria de compreender melhor essa situação."
                     className="w-full p-4 rounded-2xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-rose-200 outline-none transition-all h-24"
                   />
                   
