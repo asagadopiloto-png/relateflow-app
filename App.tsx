@@ -436,9 +436,9 @@ if (!isAuthorized) {
         Relacionamentos Primários
       </h6>
 
-      <p className="text-green-700 font-medium">
-        Infância e Família
-      </p>
+     <p className="text-sm text-slate-500 italic mt-2">
+  Os primeiros vínculos influenciam a forma como percebemos, sentimos e nos relacionamos ao longo da vida.
+</p>
 
       <div className="w-14 h-1 bg-green-500 rounded-full my-4"></div>
 
