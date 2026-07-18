@@ -416,29 +416,43 @@ if (!isAuthorized) {
     sua percepção sobre seus vínculos de forma educativa e reflexiva.
   </p>
 </div>
-       <div className="bg-white border border-green-200 rounded-2xl p-5 mb-5 shadow-sm hover:shadow-md transition-all duration-300">
-  <div className="flex items-start gap-4">
 
-    <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center text-3xl">
+                  
+  <div className="bg-gradient-to-br from-green-50 to-white border border-green-200 rounded-3xl p-6 mb-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+
+  <div className="flex items-start gap-5">
+
+    <div className="w-16 h-16 rounded-2xl bg-green-600 text-white flex items-center justify-center text-3xl shadow-lg">
       👨‍👩‍👧
     </div>
 
-    <div>
-      <h6 className="text-xl font-bold text-green-700">
+    <div className="flex-1">
+
+      <span className="text-xs font-bold uppercase tracking-widest text-green-700">
+        Área de Reflexão
+      </span>
+
+      <h6 className="text-2xl font-bold text-slate-800 mt-1">
         Relacionamentos Primários
       </h6>
 
-      <p className="text-sm text-slate-500 mb-3">
-        (Infância e Família)
+      <p className="text-green-700 font-medium">
+        Infância e Família
       </p>
 
-      <p className="text-slate-700">
+      <div className="w-14 h-1 bg-green-500 rounded-full my-4"></div>
+
+      <p className="text-slate-700 leading-relaxed">
         O que você gostaria de refletir e compreender melhor neste tema?
       </p>
+
     </div>
 
   </div>
-</div>           
+
+</div>   
+
+                  
 <div className="bg-white border border-blue-200 rounded-2xl p-5 mb-5 shadow-sm hover:shadow-md transition-all duration-300">
   <div className="flex items-start gap-4">
 
