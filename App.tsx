@@ -439,7 +439,26 @@ if (!isAuthorized) {
 
   </div>
 </div>           
-                
+<div className="bg-white border border-blue-200 rounded-2xl p-5 mb-5 shadow-sm hover:shadow-md transition-all duration-300">
+  <div className="flex items-start gap-4">
+
+    <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-3xl">
+      🏫
+    </div>
+
+    <div>
+      <h6 className="text-xl font-bold text-blue-700">
+        Relacionamentos Escolares
+      </h6>
+
+      <p className="text-slate-700 mt-3">
+        O que você gostaria de refletir e compreender melhor neste tema?
+      </p>
+    </div>
+
+  </div>
+</div>
+                  
                   <textarea 
                     value={chatInput}
                     onChange={(e) => setChatInput(e.target.value)}
