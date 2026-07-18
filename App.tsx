@@ -416,7 +416,29 @@ if (!isAuthorized) {
     sua percepção sobre seus vínculos de forma educativa e reflexiva.
   </p>
 </div>
-                  
+       <div className="bg-white border border-green-200 rounded-2xl p-5 mb-5 shadow-sm hover:shadow-md transition-all duration-300">
+  <div className="flex items-start gap-4">
+
+    <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center text-3xl">
+      👨‍👩‍👧
+    </div>
+
+    <div>
+      <h6 className="text-xl font-bold text-green-700">
+        Relacionamentos Primários
+      </h6>
+
+      <p className="text-sm text-slate-500 mb-3">
+        (Infância e Família)
+      </p>
+
+      <p className="text-slate-700">
+        O que você gostaria de refletir e compreender melhor neste tema?
+      </p>
+    </div>
+
+  </div>
+</div>           
                 
                   <textarea 
                     value={chatInput}
