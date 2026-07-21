@@ -676,7 +676,44 @@ if (!isAuthorized) {
 
   </div>
 
-</div>            
+</div>    
+     <div className="bg-gradient-to-br from-lime-50 via-white to-lime-50 border border-lime-200 rounded-3xl p-6 mb-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.01] transition-all duration-300 group">
+
+  <div className="flex items-start gap-5">
+
+    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-lime-500 to-green-700 text-white flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+      🌱
+    </div>
+
+    <div className="flex-1">
+
+      <span className="text-xs font-bold uppercase tracking-widest text-lime-700">
+        Área de Reflexão
+      </span>
+
+      <h6 className="text-3xl font-bold text-slate-800 mt-1 group-hover:text-lime-700 transition-colors">
+        Relacionamento Consigo Mesmo
+      </h6>
+
+      <p className="text-lime-700 font-semibold text-lg">
+        Autoconhecimento, Equilíbrio e Desenvolvimento Pessoal
+      </p>
+
+      <p className="text-sm text-slate-500 italic mt-2 leading-relaxed">
+        A forma como nos percebemos influencia nossas escolhas, emoções, atitudes e relacionamentos. Desenvolver o autoconhecimento fortalece a autoestima, a autonomia e o equilíbrio nas diferentes áreas da vida.
+      </p>
+
+      <div className="w-16 h-1 bg-lime-500 rounded-full my-4 group-hover:w-24 transition-all duration-300"></div>
+
+      <p className="text-slate-700 leading-relaxed text-lg">
+        O que você gostaria de refletir e compreender melhor neste tema?
+      </p>
+
+    </div>
+
+  </div>
+
+</div>             
                   <textarea 
                     value={chatInput}
                     onChange={(e) => setChatInput(e.target.value)}
