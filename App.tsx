@@ -529,7 +529,43 @@ if (!isAuthorized) {
   </div>
 
 </div>
+<div className="bg-gradient-to-br from-rose-50 via-white to-rose-50 border border-rose-200 rounded-3xl p-6 mb-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.01] transition-all duration-300 group">
 
+  <div className="flex items-start gap-5">
+
+    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-rose-500 to-rose-700 text-white flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+      ❤️
+    </div>
+
+    <div className="flex-1">
+
+      <span className="text-xs font-bold uppercase tracking-widest text-rose-700">
+        Área de Reflexão
+      </span>
+
+      <h6 className="text-3xl font-bold text-slate-800 mt-1 group-hover:text-rose-700 transition-colors">
+        Relacionamentos Afetivos
+      </h6>
+
+      <p className="text-rose-700 font-semibold text-lg">
+        Afeto, Confiança e Comunicação
+      </p>
+
+      <p className="text-slate-500 italic mt-2 leading-relaxed">
+        Os relacionamentos afetivos são construídos pelo diálogo, respeito, confiança e expressão dos sentimentos, fortalecendo vínculos saudáveis e o crescimento mútuo.
+      </p>
+
+      <div className="w-16 h-1 bg-rose-500 rounded-full my-4 group-hover:w-24 transition-all duration-300"></div>
+
+      <p className="text-slate-700 leading-relaxed text-lg">
+        O que você gostaria de refletir e compreender melhor neste tema?
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
                   
                   <textarea 
                     value={chatInput}
