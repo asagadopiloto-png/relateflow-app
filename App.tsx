@@ -603,7 +603,43 @@ if (!isAuthorized) {
   </div>
 
 </div>     
-                  
+    <div className="bg-gradient-to-br from-slate-50 via-white to-slate-50 border border-slate-300 rounded-3xl p-6 mb-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.01] transition-all duration-300 group">
+
+  <div className="flex items-start gap-5">
+
+    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-slate-600 to-slate-800 text-white flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+      💼
+    </div>
+
+    <div className="flex-1">
+
+      <span className="text-xs font-bold uppercase tracking-widest text-slate-700">
+        Área de Reflexão
+      </span>
+
+      <h6 className="text-3xl font-bold text-slate-800 mt-1 group-hover:text-slate-700 transition-colors">
+        Relacionamentos Profissionais
+      </h6>
+
+      <p className="text-slate-700 font-semibold text-lg">
+        Trabalho, Liderança e Cooperação
+      </p>
+
+      <p className="text-sm text-slate-500 italic mt-2 leading-relaxed">
+        O ambiente profissional é construído por relações de confiança, cooperação, comunicação, liderança e respeito. A qualidade dessas relações influencia o bem-estar, o desenvolvimento das equipes e os resultados das organizações.
+      </p>
+
+      <div className="w-16 h-1 bg-slate-500 rounded-full my-4 group-hover:w-24 transition-all duration-300"></div>
+
+      <p className="text-slate-700 leading-relaxed text-lg">
+        O que você gostaria de refletir e compreender melhor neste tema?
+      </p>
+
+    </div>
+
+  </div>
+
+</div>              
                   <textarea 
                     value={chatInput}
                     onChange={(e) => setChatInput(e.target.value)}
