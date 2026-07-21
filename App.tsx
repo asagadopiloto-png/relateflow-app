@@ -463,14 +463,26 @@ if (!isAuthorized) {
     <div>
       <h6 className="text-xl font-bold text-blue-700">
         Relacionamentos Escolares
-      </h6>
+            </h6>
 
-      <p className="text-slate-700 mt-3">
+      <p className="text-blue-700 font-medium">
+        Aprendizagem e Convivência
+      </p>
+
+      <p className="text-sm text-slate-500 italic mt-2">
+        A escola é um ambiente de convivência, aprendizagem e desenvolvimento humano, onde se constroem amizades, valores, respeito às diferenças e habilidades para a vida em sociedade.
+      </p>
+
+      <div className="w-14 h-1 bg-blue-500 rounded-full my-4"></div>
+
+      <p className="text-slate-700 leading-relaxed">
         O que você gostaria de refletir e compreender melhor neste tema?
       </p>
+
     </div>
 
   </div>
+
 </div>
                   
                   <textarea 
