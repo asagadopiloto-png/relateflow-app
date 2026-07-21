@@ -398,7 +398,7 @@ if (!isAuthorized) {
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-800">Converse com o EMO Vínculo</h4>
-                    <p className="text-xs text-slate-500">Ferramenta educativa para ampliar a percepção, compreender vínculos e fortalecer a comunicação nas diferentes áreas da vida.</p>
+                    <p className="text-xs text-slate-500">Uma ferramenta educativa para ampliar a percepção, compreender vínculos e promover reflexões que fortaleçam a comunicação e os relacionamentos nas diferentes áreas da vida.</p>
                   </div>
                 </div>
                 <div className="space-y-4">
