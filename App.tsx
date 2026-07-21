@@ -453,29 +453,37 @@ if (!isAuthorized) {
 </div>   
 
                   
-<div className="bg-white border border-blue-200 rounded-2xl p-5 mb-5 shadow-sm hover:shadow-md transition-all duration-300">
-  <div className="flex items-start gap-4">
+<div className="bg-gradient-to-br from-blue-50 via-white to-blue-50 border border-blue-200 rounded-3xl p-6 mb-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.01] transition-all duration-300 group">
 
-    <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-3xl">
+  <div className="flex items-start gap-5">
+
+    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 text-white flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
       🏫
     </div>
 
-    <div>
-      <h6 className="text-xl font-bold text-blue-700">
-        Relacionamentos Escolares
-            </h6>
+    <div className="flex-1">
 
-      <p className="text-blue-700 font-medium">
+      <span className="text-xs font-bold uppercase tracking-widest text-blue-700">
+        Área de Reflexão
+      </span>
+
+      <h6 className="text-3xl font-bold text-slate-800 mt-1 group-hover:text-blue-700 transition-colors">
+        Relacionamentos Escolares
+      </h6>
+
+      <p className="text-blue-700 font-semibold text-lg">
         Aprendizagem e Convivência
       </p>
 
-      <p className="text-sm text-slate-500 italic mt-2">
-        A escola é um ambiente de convivência, aprendizagem e desenvolvimento humano, onde se constroem amizades, valores, respeito às diferenças e habilidades para a vida em sociedade.
+      <p className="text-slate-500 italic mt-2 leading-relaxed">
+        A escola é um ambiente de convivência, aprendizagem e desenvolvimento humano,
+        onde se constroem amizades, valores, respeito às diferenças e habilidades para
+        a vida em sociedade.
       </p>
 
-      <div className="w-14 h-1 bg-blue-500 rounded-full my-4"></div>
+      <div className="w-16 h-1 bg-blue-500 rounded-full my-4 group-hover:w-24 transition-all duration-300"></div>
 
-      <p className="text-slate-700 leading-relaxed">
+      <p className="text-slate-700 leading-relaxed text-lg">
         O que você gostaria de refletir e compreender melhor neste tema?
       </p>
 
