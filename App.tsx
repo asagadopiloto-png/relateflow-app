@@ -618,7 +618,7 @@ if (!isAuthorized) {
       </span>
 
       <h6 className="text-3xl font-bold text-slate-800 mt-1 group-hover:text-slate-700 transition-colors">
-        Relacionamentos Profissionais
+       Relacionamentos Profissionais
       </h6>
 
       <p className="text-slate-700 font-semibold text-lg">
