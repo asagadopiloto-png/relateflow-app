@@ -639,7 +639,44 @@ if (!isAuthorized) {
 
   </div>
 
-</div>              
+</div>     
+      <div className="bg-gradient-to-br from-emerald-50 via-white to-emerald-50 border border-emerald-200 rounded-3xl p-6 mb-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.01] transition-all duration-300 group">
+
+  <div className="flex items-start gap-5">
+
+    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 text-white flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+      ⚽
+    </div>
+
+    <div className="flex-1">
+
+      <span className="text-xs font-bold uppercase tracking-widest text-emerald-700">
+        Área de Reflexão
+      </span>
+
+      <h6 className="text-3xl font-bold text-slate-800 mt-1 group-hover:text-emerald-700 transition-colors">
+        Relacionamentos Esportivos
+      </h6>
+
+      <p className="text-emerald-700 font-semibold text-lg">
+        Cooperação, Liderança e Espírito de Equipe
+      </p>
+
+      <p className="text-sm text-slate-500 italic mt-2 leading-relaxed">
+        O esporte promove valores como respeito, disciplina, cooperação, liderança, superação e trabalho em equipe. Cada relacionamento construído nesse ambiente contribui para o desenvolvimento humano, dentro e fora das competições.
+      </p>
+
+      <div className="w-16 h-1 bg-emerald-500 rounded-full my-4 group-hover:w-24 transition-all duration-300"></div>
+
+      <p className="text-slate-700 leading-relaxed text-lg">
+        O que você gostaria de refletir e compreender melhor neste tema?
+      </p>
+
+    </div>
+
+  </div>
+
+</div>            
                   <textarea 
                     value={chatInput}
                     onChange={(e) => setChatInput(e.target.value)}
