@@ -713,7 +713,45 @@ if (!isAuthorized) {
 
   </div>
 
-</div>             
+</div>   
+<div className="bg-gradient-to-br from-indigo-50 via-white to-indigo-50 border border-indigo-200 rounded-3xl p-6 mb-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.01] transition-all duration-300 group">
+
+  <div className="flex items-start gap-5">
+
+    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-700 text-white flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+      🏛️
+    </div>
+
+    <div className="flex-1">
+
+      <span className="text-xs font-bold uppercase tracking-widest text-indigo-700">
+        Área de Reflexão
+      </span>
+
+      <h6 className="text-3xl font-bold text-slate-800 mt-1 group-hover:text-indigo-700 transition-colors">
+        Relacionamentos Institucionais e Sociais
+      </h6>
+
+      <p className="text-indigo-700 font-semibold text-lg">
+        Debates, Convivência e Cidadania
+      </p>
+
+      <p className="text-sm text-slate-500 italic mt-2 leading-relaxed">
+        A convivência em instituições e na sociedade exige diálogo, respeito às diferenças, cooperação, ética e responsabilidade. Refletir sobre essas relações fortalece a cidadania, a participação social e a construção de ambientes mais saudáveis.
+      </p>
+
+      <div className="w-16 h-1 bg-indigo-500 rounded-full my-4 group-hover:w-24 transition-all duration-300"></div>
+
+      <p className="text-slate-700 leading-relaxed text-lg">
+        O que você gostaria de refletir e compreender melhor neste tema?
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+                  
                   <textarea 
                     value={chatInput}
                     onChange={(e) => setChatInput(e.target.value)}
