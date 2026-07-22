@@ -405,27 +405,19 @@ if (!isAuthorized) {
                   <h5 className="text-3xl font-bold text-slate-800 mb-3 flex items-center gap-3">
   
                     
-                 <h5 className="text-2xl font-bold text-slate-800 mb-4">
+                                   <h5 className="text-3xl font-bold text-slate-800 mb-3 flex items-center gap-3">
   🍃 Áreas de Reflexão
 </h5>
-
-<div className="bg-gradient-to-r from-green-50 via-white to-emerald-50 border border-green-200 rounded-3xl p-6 mb-8 shadow-md">
-
-  <h6 className="text-2xl font-bold text-emerald-800 mb-3">
-    💬 Em qual área da sua vida você gostaria de ampliar sua percepção?
+<div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-2xl p-5 mb-6 shadow-sm">
+  <h6 className="text-xl font-bold text-green-800 mb-2">
+    💬 Sobre qual área da sua vida você gostaria de refletir e compreender melhor?
   </h6>
 
-  <p className="text-slate-700 leading-relaxed text-lg">
-    As áreas abaixo representam diferentes contextos da vida e dos relacionamentos humanos.
-    Escolha aquela que mais se aproxima da situação que deseja compreender e utilize-a como
-    ponto de partida para sua reflexão educativa com o <strong>EMO VÍNCULO</strong>.
+  <p className="text-slate-700 leading-relaxed">
+    Escolha um dos temas abaixo apenas como referência e, em seguida,
+    descreva sua situação com suas próprias palavras. O objetivo é ampliar
+    sua percepção sobre seus vínculos de forma educativa e reflexiva.
   </p>
-
-  <p className="text-slate-600 italic mt-4">
-    Não existe resposta certa ou errada. O objetivo é favorecer o autoconhecimento,
-    fortalecer a comunicação e ampliar a compreensão sobre seus vínculos.
-  </p>
-
 </div>
   <p className="text-slate-600 italic mt-4">
     Não existe resposta certa ou errada. O objetivo é favorecer o autoconhecimento,
