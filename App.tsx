@@ -416,7 +416,7 @@ if (!isAuthorized) {
     descreva sua situação com suas próprias palavras. O objetivo é ampliar
     sua percepção sobre seus vínculos de forma educativa e reflexiva.
   </p>
-</div>
+
   <p className="text-slate-600 italic mt-4">
     Não existe resposta certa ou errada. O objetivo é favorecer o autoconhecimento,
     fortalecer a comunicação e ampliar a compreensão sobre seus vínculos.
