@@ -420,7 +420,7 @@ if (!isAuthorized) {
     Escolha aquela que mais se aproxima da situação que deseja compreender e utilize-a como
     ponto de partida para sua reflexão educativa com o <strong>EMO VÍNCULO</strong>.
   </p>
-
+</div>
   <p className="text-slate-600 italic mt-4">
     Não existe resposta certa ou errada. O objetivo é favorecer o autoconhecimento,
     fortalecer a comunicação e ampliar a compreensão sobre seus vínculos.
