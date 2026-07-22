@@ -405,7 +405,7 @@ if (!isAuthorized) {
                   <h5 className="text-3xl font-bold text-slate-800 mb-3 flex items-center gap-3">
   
                     
-                  <h5 className="text-2xl font-bold text-slate-800 mb-4">
+                 <h5 className="text-2xl font-bold text-slate-800 mb-4">
   🍃 Áreas de Reflexão
 </h5>
 
@@ -420,6 +420,12 @@ if (!isAuthorized) {
     Escolha aquela que mais se aproxima da situação que deseja compreender e utilize-a como
     ponto de partida para sua reflexão educativa com o <strong>EMO VÍNCULO</strong>.
   </p>
+
+  <p className="text-slate-600 italic mt-4">
+    Não existe resposta certa ou errada. O objetivo é favorecer o autoconhecimento,
+    fortalecer a comunicação e ampliar a compreensão sobre seus vínculos.
+  </p>
+
 </div>
   <p className="text-slate-600 italic mt-4">
     Não existe resposta certa ou errada. O objetivo é favorecer o autoconhecimento,
