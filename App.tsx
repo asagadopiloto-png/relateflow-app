@@ -403,9 +403,7 @@ if (!isAuthorized) {
                 </div>
                 <div className="space-y-4">
                   <h5 className="text-3xl font-bold text-slate-800 mb-3 flex items-center gap-3">
-  
-                    
-                                   <h5 className="text-3xl font-bold text-slate-800 mb-3 flex items-center gap-3">
+                                                         
   🍃 Áreas de Reflexão
 </h5>
 <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-2xl p-5 mb-6 shadow-sm">
