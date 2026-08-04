@@ -13,7 +13,17 @@ const Header: React.FC = () => (
         <div className="w-8 h-8 rounded-xl flex items-center justify-center bg-gradient-to-br from-emerald-500 to-teal-600 shadow-lg">
   <span className="text-white text-lg">🌿</span>
 </div>
-        <span className="font-extrabold text-slate-900 text-xl tracking-wide">EMOVINCULO.ORG</span>
+       <div className="leading-tight">
+  <h1 className="text-xl md:text-2xl font-extrabold tracking-wide">
+    <span className="text-blue-600">EMO</span>
+    <span className="text-emerald-600">VINCULO</span>
+    <span className="text-slate-700">.ORG</span>
+  </h1>
+
+  <p className="text-[11px] md:text-xs text-slate-500 font-medium tracking-wide">
+    Reflexão • Percepção • Vínculos
+  </p>
+</div> 
       </div>
        <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
   <a
