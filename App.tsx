@@ -17,7 +17,7 @@ const Header: React.FC = () => (
   <h1 className="text-xl md:text-2xl font-extrabold tracking-wide">
     <span className="text-blue-600">EMO</span>
     <span className="text-emerald-600">VINCULO</span>
-    <span className="text-slate-700">.ORG</span>
+    <span className="text-blue-500">.ORG</span>
   </h1>
 
   <p className="text-[11px] md:text-xs text-slate-500 font-medium tracking-wide">
