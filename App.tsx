@@ -61,6 +61,7 @@ const Footer: React.FC = () => (
 
 const App: React.FC = () => {
   const [view, setView] = useState<'home' | 'quiz' | 'result'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'about'>('home');
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<RelationalStyle[]>([]);
   const [result, setResult] = useState<QuizResult | null>(null);
