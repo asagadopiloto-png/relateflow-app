@@ -26,13 +26,7 @@ const Header: React.FC = () => (
 </div> 
       </div>
        <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
- <button
-  onClick={() => setCurrentPage('about')}
-  className="hover:text-indigo-600 transition-colors font-semibold"
->
-  📖 Sobre
-</button>
-</nav>
+ </nav>
     </div>
   </header>
 );
