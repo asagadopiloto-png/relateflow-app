@@ -294,7 +294,7 @@ if (currentPage === 'about') {
 
     <div className="grid md:grid-cols-2 gap-8">
 
-      <div className="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm">
+      <div className="group bg-gradient-to-br from-blue-50 via-cyan-50 to-emerald-50 p-8 rounded-3xl border border-blue-200 shadow-md transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-emerald-300 hover:from-blue-100 hover:via-cyan-100 hover:to-emerald-100 hover:shadow-xl" >
         <h3 className="text-2xl font-bold text-slate-900 mb-5">
           José Carlos Teles Queiroz
         </h3>
@@ -306,7 +306,7 @@ if (currentPage === 'about') {
         </p>
       </div>
 
-      <div className="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm">
+      <div className="group bg-gradient-to-br from-blue-50 via-cyan-50 to-emerald-50 p-8 rounded-3xl border border-blue-200 shadow-md transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-emerald-300 hover:from-blue-100 hover:via-cyan-100 hover:to-emerald-100 hover:shadow-xl">
         <h3 className="text-2xl font-bold text-slate-900 mb-5">
           Sheila Cristina Freire Queiroz
         </h3>
@@ -337,7 +337,7 @@ if (currentPage === 'about') {
       </h2>
     </div>
 
-    <div className="bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+    <div className="group bg-gradient-to-br from-blue-50 via-cyan-50 to-emerald-50 p-8 md:p-12 rounded-3xl border border-blue-200 shadow-md space-y-6 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-emerald-300 hover:from-blue-100 hover:via-cyan-100 hover:to-emerald-100 hover:shadow-xl">
 
       <p className="text-slate-600 leading-relaxed">
         O EMO VÍNCULO nasceu da proposta de criar um espaço educativo
