@@ -550,7 +550,19 @@ Não coletamos dados sensíveis dos usuários. Se você estiver enfrentando difi
 
     </div>
   </div>
-</section>     
+</section> 
+     {/* BOTÃO VOLTAR À PÁGINA PRINCIPAL */}
+<div className="flex justify-center py-12 px-4">
+
+  <button
+    type="button"
+    onClick={() => setCurrentPage('home')}
+    className="bg-gradient-to-r from-blue-700 via-cyan-600 to-emerald-500 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+  >
+    ← Voltar à Página Principal
+  </button>
+
+</div>   
 </main>
 
       <Footer />
