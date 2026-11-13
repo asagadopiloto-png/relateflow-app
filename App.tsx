@@ -408,6 +408,59 @@ Não coletamos dados sensíveis dos usuários. Se você estiver enfrentando difi
 
     </div>
   </div>
+</section>
+    {/* O QUE O EMO VÍNCULO É E O QUE NÃO É */}
+<section className="py-20 px-4 bg-slate-50">
+  <div className="max-w-6xl mx-auto">
+
+    <div className="text-center mb-12">
+      <p className="text-sm font-bold tracking-widest text-blue-700 mb-3">
+        CONHEÇA NOSSA PROPOSTA
+      </p>
+
+      <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
+        O QUE O EMO VÍNCULO É E O QUE NÃO É
+      </h2>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-8">
+
+      {/* O QUE É */}
+      <div className="group bg-gradient-to-br from-blue-50 via-cyan-50 to-emerald-50 p-8 rounded-3xl border border-blue-200 shadow-md transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-emerald-300 hover:from-blue-100 hover:via-cyan-100 hover:to-emerald-100 hover:shadow-xl">
+
+        <h3 className="text-2xl font-extrabold text-blue-800 mb-6">
+          O EMO VÍNCULO É
+        </h3>
+
+        <ul className="space-y-4 text-slate-700 leading-relaxed">
+          <li>• Uma ferramenta digital de caráter educativo e reflexivo.</li>
+          <li>• Um espaço de reflexão sobre comunicação, percepção e vínculos humanos.</li>
+          <li>• Um recurso que estimula o autoconhecimento e o respeito às diferenças.</li>
+          <li>• Uma oportunidade para ampliar a compreensão sobre diferentes formas de interação.</li>
+          <li>• Um instrumento de apoio à reflexão e ao pensamento crítico.</li>
+        </ul>
+
+      </div>
+
+      {/* O QUE NÃO É */}
+      <div className="group bg-gradient-to-br from-blue-50 via-cyan-50 to-emerald-50 p-8 rounded-3xl border border-blue-200 shadow-md transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-emerald-300 hover:from-blue-100 hover:via-cyan-100 hover:to-emerald-100 hover:shadow-xl">
+
+        <h3 className="text-2xl font-extrabold text-emerald-800 mb-6">
+          O EMO VÍNCULO NÃO É
+        </h3>
+
+        <ul className="space-y-4 text-slate-700 leading-relaxed">
+          <li>• Não é terapia nem tratamento psicológico.</li>
+          <li>• Não realiza diagnósticos psicológicos ou clínicos.</li>
+          <li>• Não substitui acompanhamento de profissionais especializados.</li>
+          <li>• Não determina a personalidade ou o comportamento de uma pessoa.</li>
+          <li>• Não deve ser utilizado para rotular ou julgar indivíduos.</li>
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
 </section>    
 </main>
 
