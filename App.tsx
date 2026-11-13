@@ -255,7 +255,7 @@ if (currentPage === 'about') {
     </div>
   </section>
 <section className="py-20 px-4 bg-white">
-  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+  <div className="group max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center rounded-3xl border border-blue-200 bg-gradient-to-br from-blue-50 via-cyan-50 to-emerald-50 p-8 md:p-10 shadow-md transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-emerald-300 hover:from-blue-100 hover:via-cyan-100 hover:to-emerald-100 hover:shadow-xl">
 
     <div>
       <p className="text-sm font-bold tracking-widest text-blue-700 mb-4">
