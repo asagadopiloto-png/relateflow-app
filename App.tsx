@@ -254,7 +254,36 @@ if (currentPage === 'about') {
 
     </div>
   </section>
+<section className="py-20 px-4 bg-white">
+  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
+    <div>
+      <p className="text-sm font-bold tracking-widest text-blue-700 mb-4">
+        CONEXÃO QUE TRANSFORMA.
+      </p>
+
+      <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+        PERCEPÇÃO QUE LIBERTA.
+      </h2>
+
+      <h3 className="text-xl font-bold text-slate-800 mb-4">
+        SOBRE O EMO VÍNCULO
+      </h3>
+
+      <p className="text-slate-600 leading-relaxed">
+        O EMO VÍNCULO é uma ferramenta educativa que utiliza conhecimentos
+        teóricos da Psicanálise e da Programação Neurolinguística (PNL)
+        para ampliar a percepção sobre os estilos de comunicação,
+        os vínculos humanos e as diferentes formas de interação.
+      </p>
+    </div>
+
+    <div className="min-h-[280px] rounded-3xl bg-slate-50 border border-slate-200 flex items-center justify-center">
+      {/* Espaço reservado para imagem ou logomarca */}
+    </div>
+
+  </div>
+</section>
 </main>
 
       <Footer />
