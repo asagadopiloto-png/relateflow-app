@@ -371,7 +371,44 @@ Não coletamos dados sensíveis dos usuários. Se você estiver enfrentando difi
     </div>
   </div>
 </section>  
-        
+    {/* NOSSA MISSÃO */}
+<section className="py-20 px-4 bg-white">
+  <div className="max-w-5xl mx-auto">
+
+    <div className="text-center mb-12">
+      <p className="text-sm font-bold tracking-widest text-blue-700 mb-3">
+        NOSSO PROPÓSITO
+      </p>
+
+      <h2 className="text-4xl font-extrabold text-slate-900">
+        NOSSA MISSÃO
+      </h2>
+    </div>
+
+    <div className="bg-slate-50 p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+
+      <p className="text-slate-600 leading-relaxed">
+        Nossa missão é promover a reflexão sobre a comunicação, a percepção
+        e os vínculos humanos, oferecendo um espaço educativo que estimule
+        o autoconhecimento, o respeito às diferenças e a compreensão das
+        relações interpessoais.
+      </p>
+
+      <p className="text-slate-600 leading-relaxed">
+        Por meio de conteúdos reflexivos e recursos digitais, buscamos
+        ampliar a percepção sobre as diferentes formas de interação,
+        incentivando o diálogo, a escuta, a autonomia e a construção
+        de relações mais conscientes e respeitosas.
+      </p>
+
+      <p className="text-slate-600 leading-relaxed">
+        O EMO VÍNCULO valoriza a educação, a responsabilidade digital,
+        o pensamento crítico e o respeito à individualidade de cada pessoa.
+      </p>
+
+    </div>
+  </div>
+</section>    
 </main>
 
       <Footer />
