@@ -385,7 +385,7 @@ Não coletamos dados sensíveis dos usuários. Se você estiver enfrentando difi
       </h2>
     </div>
 
-    <div className="bg-slate-50 p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+    <div className="group bg-gradient-to-br from-blue-50 via-cyan-50 to-emerald-50 p-8 md:p-12 rounded-3xl border border-blue-200 shadow-md space-y-6 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-emerald-300 hover:from-blue-100 hover:via-cyan-100 hover:to-emerald-100 hover:shadow-xl">
 
       <p className="text-slate-600 leading-relaxed">
         Nossa missão é promover a reflexão sobre a comunicação, a percepção
