@@ -461,7 +461,96 @@ Não coletamos dados sensíveis dos usuários. Se você estiver enfrentando difi
 
     </div>
   </div>
-</section>    
+</section> 
+   {/* NOSSOS PRINCÍPIOS */}
+<section className="py-20 px-4 bg-slate-50">
+  <div className="max-w-6xl mx-auto">
+
+    <div className="text-center mb-12">
+      <p className="text-sm font-bold tracking-widest text-blue-700 mb-3">
+        OS VALORES QUE ORIENTAM NOSSA ATUAÇÃO
+      </p>
+
+      <h2 className="text-4xl font-extrabold text-slate-900">
+        NOSSOS PRINCÍPIOS
+      </h2>
+    </div>
+
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      {/* ÉTICA */}
+      <div className="group bg-gradient-to-br from-blue-50 via-cyan-50 to-emerald-50 p-8 rounded-3xl border border-blue-200 shadow-md transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-emerald-300 hover:from-blue-100 hover:via-cyan-100 hover:to-emerald-100 hover:shadow-xl">
+
+        <h3 className="text-2xl font-extrabold text-blue-800 mb-4">
+          ÉTICA
+        </h3>
+
+        <p className="text-slate-600 leading-relaxed">
+          Atuar com responsabilidade, integridade e transparência,
+          respeitando os limites da ferramenta e a individualidade
+          de cada pessoa.
+        </p>
+      </div>
+
+      {/* EDUCAÇÃO */}
+      <div className="group bg-gradient-to-br from-blue-50 via-cyan-50 to-emerald-50 p-8 rounded-3xl border border-blue-200 shadow-md transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-emerald-300 hover:from-blue-100 hover:via-cyan-100 hover:to-emerald-100 hover:shadow-xl">
+
+        <h3 className="text-2xl font-extrabold text-blue-800 mb-4">
+          EDUCAÇÃO
+        </h3>
+
+        <p className="text-slate-600 leading-relaxed">
+          Valorizar o conhecimento, a reflexão, o pensamento crítico
+          e a aprendizagem contínua como caminhos para ampliar
+          a compreensão das relações humanas.
+        </p>
+      </div>
+
+      {/* RESPEITO */}
+      <div className="group bg-gradient-to-br from-blue-50 via-cyan-50 to-emerald-50 p-8 rounded-3xl border border-blue-200 shadow-md transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-emerald-300 hover:from-blue-100 hover:via-cyan-100 hover:to-emerald-100 hover:shadow-xl">
+
+        <h3 className="text-2xl font-extrabold text-blue-800 mb-4">
+          RESPEITO
+        </h3>
+
+        <p className="text-slate-600 leading-relaxed">
+          Reconhecer e valorizar as diferenças individuais,
+          promovendo acolhimento, dignidade, inclusão e respeito
+          às diferentes formas de pensar e se expressar.
+        </p>
+      </div>
+
+      {/* COMUNICAÇÃO */}
+      <div className="group bg-gradient-to-br from-blue-50 via-cyan-50 to-emerald-50 p-8 rounded-3xl border border-blue-200 shadow-md transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-emerald-300 hover:from-blue-100 hover:via-cyan-100 hover:to-emerald-100 hover:shadow-xl">
+
+        <h3 className="text-2xl font-extrabold text-blue-800 mb-4">
+          COMUNICAÇÃO
+        </h3>
+
+        <p className="text-slate-600 leading-relaxed">
+          Incentivar o diálogo, a escuta, a clareza e a compreensão
+          mútua, reconhecendo a comunicação como elemento
+          fundamental dos vínculos humanos.
+        </p>
+      </div>
+
+      {/* LGPD */}
+      <div className="group bg-gradient-to-br from-blue-50 via-cyan-50 to-emerald-50 p-8 rounded-3xl border border-blue-200 shadow-md transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-emerald-300 hover:from-blue-100 hover:via-cyan-100 hover:to-emerald-100 hover:shadow-xl">
+
+        <h3 className="text-2xl font-extrabold text-blue-800 mb-4">
+          LGPD E PRIVACIDADE
+        </h3>
+
+        <p className="text-slate-600 leading-relaxed">
+          Valorizar a proteção dos dados pessoais, a transparência
+          e o tratamento responsável das informações, observando
+          os princípios da Lei Geral de Proteção de Dados.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>     
 </main>
 
       <Footer />
