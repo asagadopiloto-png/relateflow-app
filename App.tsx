@@ -300,9 +300,9 @@ if (currentPage === 'about') {
         </h3>
 
         <p className="text-slate-600 leading-relaxed">
-          Jornalista, escritor e estudioso da Programação Neurolinguística
-          (PNL), com estudos em Psicanálise. Dedica-se à reflexão sobre
-          comunicação, percepção, comportamento humano e vínculos sociais.
+          Jornalista, escritor,Programador Neurolinguístico
+          (PNL), Psicanálista em formação. Dedica-se à pesquisas independentes sobre
+          comunicação, percepção, comportamento humano, Inteligência Artificial  e vínculos sociais.
         </p>
       </div>
 
@@ -323,6 +323,55 @@ if (currentPage === 'about') {
   </div>
 
 </section> 
+      {/* NOSSA HISTÓRIA */}
+<section className="py-20 px-4 bg-slate-50">
+  <div className="max-w-5xl mx-auto">
+
+    <div className="text-center mb-12">
+      <p className="text-sm font-bold tracking-widest text-blue-700 mb-3">
+        UMA PROPOSTA QUE NASCE DA REFLEXÃO
+      </p>
+
+      <h2 className="text-4xl font-extrabold text-slate-900">
+        NOSSA HISTÓRIA
+      </h2>
+    </div>
+
+    <div className="bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+
+      <p className="text-slate-600 leading-relaxed">
+        O EMO VÍNCULO nasceu da proposta de criar um espaço educativo
+        dedicado à reflexão sobre a comunicação, a percepção e os
+        vínculos humanos.
+      </p>
+
+      <p className="text-slate-600 leading-relaxed">
+        Sua construção tem base teórica em Psicanálise e Programação Neurolinguística (PNL), com finalidade educativa., buscando apresentar
+        conhecimentos que ajudem as pessoas a observar suas formas
+        de perceber, comunicar e interagir.
+      </p>
+
+      <p className="text-slate-600 leading-relaxed">
+        Ao longo de seu desenvolvimento, o projeto passou a integrar
+        conteúdos reflexivos e uma ferramenta de identificação de
+        estilos predominantes de percepção e comunicação: Visual,
+        Auditivo e Cinestésico.
+      </p>
+
+      <p className="text-slate-600 leading-relaxed">
+        Assim nasceu o EMO VÍNCULO: uma iniciativa educativa que
+        valoriza o autoconhecimento, o respeito às diferenças e
+        a ampliação da percepção nas relações humanas.
+      Este aplicativo tem caráter exclusivamente educativo e reflexivo.
+Ele não substitui terapia, psicanálise ou acompanhamento psicológico profissional.
+Os resultados não constituem diagnóstico psicológico ou clínico.
+Não coletamos dados sensíveis dos usuários. Se você estiver enfrentando dificuldades emocionais graves, procure um profissional de saúde mental.
+      </p>
+
+    </div>
+  </div>
+</section>  
+        
 </main>
 
       <Footer />
