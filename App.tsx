@@ -235,11 +235,27 @@ if (currentPage === 'about') {
     <>
       <Header />
 
-      <main className="min-h-screen flex items-center justify-center bg-white">
-        <h1 className="text-5xl font-bold text-slate-800">
-          Página Sobre
-        </h1>
-      </main>
+      <main className="min-h-screen bg-white">
+
+  <section className="bg-gradient-to-br from-slate-100 via-blue-50 to-cyan-100 py-24 px-4">
+    <div className="max-w-5xl mx-auto text-center">
+
+      <p className="text-sm md:text-base font-bold tracking-[0.25em] text-blue-700 mb-6">
+        SUA JORNADA DE REFLEXÃO
+      </p>
+
+      <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 mb-8 leading-tight">
+        COMEÇA AQUI.
+      </h1>
+
+      <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        Ferramenta educativa para ampliar a percepção sobre os vínculos humanos.
+      </p>
+
+    </div>
+  </section>
+
+</main>
 
       <Footer />
     </>
