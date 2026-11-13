@@ -644,7 +644,12 @@ Não coletamos dados sensíveis dos usuários. Se você estiver enfrentando difi
         onde se constroem amizades, valores, respeito às diferenças e habilidades para
         a vida em sociedade.
       </p>
-
+<p className="text-slate-600 leading-relaxed mt-4">
+  Em uma sociedade cada vez mais conectada, também é importante
+  compreender o uso responsável das tecnologias e da Inteligência
+  Artificial, desenvolvendo o pensamento crítico, a segurança
+  digital, o respeito à privacidade e a capacidade de avaliar informações.
+</p>
       <div className="w-16 h-1 bg-blue-500 rounded-full my-4 group-hover:w-24 transition-all duration-300"></div>
 
       <p className="text-slate-700 leading-relaxed text-lg">
