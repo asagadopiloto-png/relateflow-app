@@ -270,20 +270,59 @@ if (currentPage === 'about') {
         SOBRE O EMO VÍNCULO
       </h3>
 
-      <p className="text-slate-600 leading-relaxed">
+           <p className="text-slate-600 leading-relaxed">
         O EMO VÍNCULO é uma ferramenta educativa que utiliza conhecimentos
         teóricos da Psicanálise e da Programação Neurolinguística (PNL)
         para ampliar a percepção sobre os estilos de comunicação,
         os vínculos humanos e as diferentes formas de interação.
       </p>
     </div>
+  </div>
 
-    <div className="min-h-[280px] rounded-3xl bg-slate-50 border border-slate-200 flex items-center justify-center">
-      {/* Espaço reservado para imagem ou logomarca */}
+  {/* QUEM SOMOS */}
+  <div className="mt-20">
+
+    <div className="text-center mb-12">
+      <p className="text-sm font-bold tracking-widest text-blue-700 mb-3">
+        CONHEÇA OS IDEALIZADORES
+      </p>
+
+      <h2 className="text-4xl font-extrabold text-slate-900">
+        QUEM SOMOS
+      </h2>
     </div>
 
+    <div className="grid md:grid-cols-2 gap-8">
+
+      <div className="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm">
+        <h3 className="text-2xl font-bold text-slate-900 mb-5">
+          José Carlos Teles Queiroz
+        </h3>
+
+        <p className="text-slate-600 leading-relaxed">
+          Jornalista, escritor e estudioso da Programação Neurolinguística
+          (PNL), com estudos em Psicanálise. Dedica-se à reflexão sobre
+          comunicação, percepção, comportamento humano e vínculos sociais.
+        </p>
+      </div>
+
+      <div className="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm">
+        <h3 className="text-2xl font-bold text-slate-900 mb-5">
+          Sheila Cristina Freire Queiroz
+        </h3>
+
+        <p className="text-slate-600 leading-relaxed">
+          Jornalista, psicanalista clínica e supervisora, com formação
+          em Neuropsicopedagogia, Psicossomática e Hipnoterapia.
+          Dedica-se aos estudos das relações humanas, percepção
+          e comunicação.
+        </p>
+      </div>
+
+    </div>
   </div>
-</section>
+
+</section> 
 </main>
 
       <Footer />
